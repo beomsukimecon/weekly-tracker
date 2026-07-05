@@ -1,0 +1,501 @@
+﻿day,word,meaning,example,example_translation,wrong_count
+1,argue,주장하다,Some researchers argue that the policy failed.,일부 연구자들은 그 정책이 실패했다고 주장한다,0
+1,claim,주장하다·주장,The author claims that the data are biased.,저자는 데이터가 편향되었다고 주장한다,0
+1,assert,단언하다,He asserts that prices will rise.,그는 가격이 오를 것이라고 단언한다,0
+1,maintain,(주장을) 고수하다,She maintains that the model is valid.,그녀는 모형이 타당하다고 주장한다,0
+1,contend,주장하다,Critics contend that the reform was rushed.,비판자들은 개혁이 성급했다고 주장한다,0
+1,state,진술하다,The report states the main findings clearly.,보고서는 주요 결과를 명확히 진술한다,0
+1,suggest,시사하다·제안하다,The evidence suggests a strong link.,증거는 강한 연관성을 시사한다,0
+1,propose,제안하다,We propose a new framework.,우리는 새로운 틀을 제안한다,0
+1,insist,고집하다·주장하다,They insist on stricter regulation.,그들은 더 엄격한 규제를 주장한다,0
+1,acknowledge,인정하다,The authors acknowledge several limitations.,저자들은 몇 가지 한계를 인정한다,0
+1,admit,인정하다,He admits that the estimate is rough.,그는 추정치가 대략적임을 인정한다,0
+1,deny,부인하다,The firm denies any wrongdoing.,그 회사는 어떤 잘못도 부인한다,0
+1,refute,반박하다,The results refute the earlier hypothesis.,그 결과는 이전 가설을 반박한다,0
+1,oppose,반대하다,Many residents oppose the new plan.,많은 주민이 새 계획에 반대한다,0
+1,support,뒷받침하다,The data support this interpretation.,데이터가 이 해석을 뒷받침한다,0
+1,justify,정당화하다,The benefits justify the costs.,이익이 비용을 정당화한다,0
+1,defend,옹호하다,She defends the traditional approach.,그녀는 전통적 접근을 옹호한다,0
+1,convince,납득시키다,The results convinced skeptical readers.,그 결과는 회의적인 독자들을 납득시켰다,0
+1,persuade,설득하다,The ad persuades consumers to buy.,광고는 소비자가 사도록 설득한다,0
+1,emphasize,강조하다,The study emphasizes early education.,그 연구는 조기 교육을 강조한다,0
+1,stress,강조하다,Experts stress the need for caution.,전문가들은 신중함의 필요성을 강조한다,0
+1,highlight,부각하다,The figure highlights regional gaps.,그 그림은 지역 격차를 부각한다,0
+1,point out,지적하다,Reviewers pointed out a key flaw.,심사자들은 핵심 결함을 지적했다,0
+1,note,언급하다·주목하다,Note that the sample is small.,표본이 작다는 점에 주목하라,0
+1,observe,관찰하다·언급하다,We observe a similar pattern.,우리는 유사한 패턴을 관찰한다,0
+1,remark,언급하다,He remarked on the sharp decline.,그는 급격한 감소에 대해 언급했다,0
+1,imply,함의하다,Higher prices imply lower demand.,더 높은 가격은 더 낮은 수요를 함의한다,0
+1,indicate,나타내다,The index indicates steady growth.,그 지수는 꾸준한 성장을 나타낸다,0
+1,demonstrate,보여주다·입증하다,The experiment demonstrates the effect.,그 실험은 효과를 입증한다,0
+1,illustrate,(예로) 보여주다,Figure 2 illustrates the mechanism.,그림 2는 그 메커니즘을 보여준다,0
+1,clarify,명확히 하다,The appendix clarifies the notation.,부록은 표기법을 명확히 한다,0
+1,specify,명시하다,The contract specifies the terms.,계약서는 조건을 명시한다,0
+1,define,정의하다,We define quality as follows.,우리는 품질을 다음과 같이 정의한다,0
+1,interpret,해석하다,The coefficient is interpreted as an elasticity.,그 계수는 탄력성으로 해석된다,0
+1,summarize,요약하다,Table 1 summarizes the results.,표 1은 결과를 요약한다,0
+1,conclude,결론짓다,We conclude that the policy worked.,우리는 그 정책이 효과가 있었다고 결론짓는다,0
+1,infer,추론하다,We infer preferences from choices.,우리는 선택으로부터 선호를 추론한다,0
+1,assume,가정하다,Assume that firms set prices.,기업이 가격을 정한다고 가정하라,0
+1,presume,추정하다,The court presumes innocence.,법원은 무죄를 추정한다,0
+1,speculate,추측하다,Analysts speculate about a merger.,분석가들은 합병 가능성을 추측한다,0
+1,question,의문을 제기하다,Some question the validity of the test.,일부는 그 검정의 타당성에 의문을 제기한다,0
+1,challenge,이의를 제기하다,New evidence challenges the consensus.,새 증거는 통설에 이의를 제기한다,0
+1,dispute,반박하다·논쟁,The figures are hotly disputed.,그 수치는 뜨겁게 논쟁된다,0
+1,concede,(마지못해) 인정하다,She concedes that costs may rise.,그녀는 비용이 오를 수 있음을 인정한다,0
+1,address,다루다,This paper addresses two questions.,이 논문은 두 가지 질문을 다룬다,0
+1,raise,제기하다,The finding raises further questions.,그 결과는 추가 질문을 제기한다,0
+1,advocate,옹호하다,The group advocates free trade.,그 단체는 자유무역을 옹호한다,0
+1,endorse,지지하다,The committee endorsed the proposal.,위원회는 그 제안을 지지했다,0
+1,dismiss,일축하다,He dismissed the concern as minor.,그는 그 우려를 사소하다고 일축했다,0
+1,reject,기각하다·거부하다,We reject the null hypothesis.,우리는 귀무가설을 기각한다,0
+2,cause,야기하다·원인,Smoking causes serious diseases.,흡연은 심각한 질병을 야기한다,0
+2,lead to,~로 이어지다,Low rates led to a housing boom.,저금리는 주택 붐으로 이어졌다,0
+2,result in,~을 초래하다,The strike resulted in delays.,파업은 지연을 초래했다,0
+2,result from,~에서 비롯되다,The gap results from unequal access.,그 격차는 불평등한 접근에서 비롯된다,0
+2,stem from,~에서 기인하다,The problem stems from poor design.,그 문제는 부실한 설계에서 기인한다,0
+2,arise from,~에서 발생하다,Conflicts arise from scarce resources.,갈등은 희소한 자원에서 발생한다,0
+2,derive from,~에서 파생되다,The term derives from Latin.,그 용어는 라틴어에서 파생되었다,0
+2,originate,기원하다,The practice originated in Europe.,그 관행은 유럽에서 기원했다,0
+2,trigger,촉발하다,The news triggered a sell-off.,그 소식은 매도세를 촉발했다,0
+2,provoke,유발하다,The decision provoked strong protests.,그 결정은 강한 항의를 유발했다,0
+2,induce,유도하다,Subsidies induce firms to enter.,보조금은 기업의 진입을 유도한다,0
+2,generate,발생시키다,Tourism generates substantial income.,관광은 상당한 수입을 발생시킨다,0
+2,produce,만들어내다,The reform produced mixed results.,그 개혁은 엇갈린 결과를 낳았다,0
+2,yield,산출하다,The survey yielded useful data.,그 조사는 유용한 데이터를 산출했다,0
+2,bring about,초래하다,Technology brought about major changes.,기술은 큰 변화를 가져왔다,0
+2,give rise to,~을 낳다,Urbanization gave rise to new problems.,도시화는 새로운 문제를 낳았다,0
+2,contribute to,~에 기여하다,Exercise contributes to better health.,운동은 더 나은 건강에 기여한다,0
+2,account for,설명하다,Income differences account for the gap.,소득 차이가 그 격차를 설명한다,0
+2,attribute A to B,A를 B의 탓으로 돌리다,They attribute the rise to demand.,그들은 상승을 수요 탓으로 돌린다,0
+2,owe A to B,A는 B 덕분이다,The firm owes its success to innovation.,그 회사의 성공은 혁신 덕분이다,0
+2,affect,영향을 미치다,Weather affects crop yields.,날씨는 작물 수확량에 영향을 준다,0
+2,influence,영향을 주다,Peers influence student behavior.,또래는 학생 행동에 영향을 준다,0
+2,impact,영향(을 주다),The tax had little impact on sales.,그 세금은 판매에 거의 영향이 없었다,0
+2,shape,형성하다,History shapes national identity.,역사는 국가 정체성을 형성한다,0
+2,determine,결정하다,Costs determine the final price.,비용이 최종 가격을 결정한다,0
+2,depend on,~에 달려 있다,The outcome depends on timing.,결과는 시점에 달려 있다,0
+2,rely on,~에 의존하다,The model relies on strong assumptions.,그 모형은 강한 가정에 의존한다,0
+2,consequence,결과,The ban had unintended consequences.,그 금지는 의도치 않은 결과를 낳았다,0
+2,outcome,결과,We compare outcomes across groups.,우리는 집단 간 결과를 비교한다,0
+2,effect,효과,The effect was small but significant.,효과는 작지만 유의했다,0
+2,aftermath,여파,Prices soared in the aftermath of the war.,전쟁의 여파로 물가가 치솟았다,0
+2,implication,함의,The finding has policy implications.,그 결과는 정책적 함의를 가진다,0
+2,byproduct,부산물,Stress is a byproduct of overwork.,스트레스는 과로의 부산물이다,0
+2,factor,요인,Several factors explain the decline.,여러 요인이 감소를 설명한다,0
+2,driver,동인,Exports are a key driver of growth.,수출은 성장의 핵심 동인이다,0
+2,source,원천,Oil remains a major source of energy.,석유는 여전히 주요 에너지원이다,0
+2,root,근원,Poverty is the root of the problem.,빈곤이 문제의 근원이다,0
+2,motive,동기,Profit is the main motive.,이윤이 주된 동기다,0
+2,incentive,유인,Taxes change firms' incentives.,세금은 기업의 유인을 바꾼다,0
+2,condition,조건,Growth requires stable conditions.,성장은 안정적인 조건을 요구한다,0
+2,prerequisite,전제조건,Trust is a prerequisite for trade.,신뢰는 거래의 전제조건이다,0
+2,catalyst,촉매·계기,The crisis was a catalyst for reform.,위기는 개혁의 계기가 되었다,0
+2,enable,가능하게 하다,The app enables faster payments.,그 앱은 더 빠른 결제를 가능하게 한다,0
+2,allow,허용하다,The visa allows longer stays.,그 비자는 더 긴 체류를 허용한다,0
+2,force,강제하다,Losses forced the firm to exit.,손실은 그 회사를 퇴출하게 만들었다,0
+2,compel,강요하다,The law compels firms to disclose.,그 법은 기업의 공시를 강제한다,0
+2,prevent,막다,Vaccines prevent severe illness.,백신은 중증 질환을 막는다,0
+2,hinder,방해하다,Red tape hinders small businesses.,관료적 절차는 소상공인을 방해한다,0
+2,facilitate,촉진하다,Platforms facilitate matching.,플랫폼은 매칭을 촉진한다,0
+2,foster,육성하다·촉진하다,Competition fosters innovation.,경쟁은 혁신을 촉진한다,0
+3,increase,증가하다,Sales increased by ten percent.,판매가 10퍼센트 증가했다,0
+3,decrease,감소하다,Costs decreased over time.,비용이 시간이 지나며 감소했다,0
+3,rise,오르다,Rents continue to rise.,임대료가 계속 오른다,0
+3,fall,떨어지다,Profits fell sharply last year.,작년에 이익이 급락했다,0
+3,decline,감소(하다),Birth rates are declining.,출생률이 감소하고 있다,0
+3,drop,하락하다,The price dropped to a record low.,가격이 사상 최저로 떨어졌다,0
+3,surge,급증하다,Demand surged during the holidays.,연휴 동안 수요가 급증했다,0
+3,soar,치솟다,Energy prices soared last winter.,지난겨울 에너지 가격이 치솟았다,0
+3,plummet,폭락하다,The stock plummeted after the news.,그 소식 후 주가가 폭락했다,0
+3,plunge,급락하다,Exports plunged during the crisis.,위기 동안 수출이 급락했다,0
+3,fluctuate,변동하다,Exchange rates fluctuate daily.,환율은 매일 변동한다,0
+3,stabilize,안정되다,Inflation finally stabilized.,물가상승률이 마침내 안정되었다,0
+3,remain stable,안정적으로 유지되다,Unemployment remained stable.,실업률이 안정적으로 유지되었다,0
+3,peak,정점(에 달하다),Traffic peaks at rush hour.,교통량은 출퇴근 시간에 정점에 달한다,0
+3,bottom out,바닥을 치다,The market seems to have bottomed out.,시장이 바닥을 친 것으로 보인다,0
+3,double,두 배가 되다,Output doubled in a decade.,산출이 10년 만에 두 배가 되었다,0
+3,halve,절반이 되다,The subsidy was halved.,보조금이 절반으로 줄었다,0
+3,expand,확대되다,The firm expanded into Asia.,그 회사는 아시아로 확장했다,0
+3,shrink,줄어들다,The workforce is shrinking.,노동인구가 줄어들고 있다,0
+3,contract,수축하다,The economy contracted last quarter.,지난 분기에 경제가 수축했다,0
+3,grow,성장하다,The sector grew rapidly.,그 부문은 빠르게 성장했다,0
+3,diminish,줄어들다,Returns diminish with scale.,수익은 규모가 커질수록 줄어든다,0
+3,dwindle,점점 줄다,Savings dwindled to nothing.,저축이 점점 줄어 바닥났다,0
+3,escalate,격화되다,The dispute escalated quickly.,분쟁이 빠르게 격화되었다,0
+3,intensify,심화되다,Competition has intensified.,경쟁이 심화되었다,0
+3,moderate,완화되다,Growth moderated in the second half.,하반기에 성장세가 완만해졌다,0
+3,accelerate,가속하다,Inflation accelerated unexpectedly.,물가상승이 예상외로 가속되었다,0
+3,slow down,둔화되다,Hiring slowed down noticeably.,채용이 눈에 띄게 둔화되었다,0
+3,recover,회복하다,Tourism recovered after the pandemic.,팬데믹 이후 관광이 회복되었다,0
+3,rebound,반등하다,Prices rebounded within months.,가격이 몇 달 안에 반등했다,0
+3,deteriorate,악화되다,Conditions deteriorated rapidly.,상황이 급속히 악화되었다,0
+3,improve,개선되다,Test scores improved steadily.,시험 점수가 꾸준히 개선되었다,0
+3,worsen,악화되다,The shortage worsened this year.,부족 사태가 올해 악화되었다,0
+3,transform,변모시키다,Technology transformed retail.,기술이 소매업을 변모시켰다,0
+3,convert,전환하다,The plant was converted to gas.,그 발전소는 가스로 전환되었다,0
+3,alter,바꾸다,The ruling altered the landscape.,그 판결은 판도를 바꾸었다,0
+3,modify,수정하다,We modified the baseline model.,우리는 기본 모형을 수정했다,0
+3,adjust,조정하다,Wages adjust slowly.,임금은 느리게 조정된다,0
+3,adapt,적응하다,Firms adapt to new rules.,기업은 새 규칙에 적응한다,0
+3,shift,이동(하다),Demand shifted toward online services.,수요가 온라인 서비스로 이동했다,0
+3,transition,전환,The transition to renewables is costly.,재생에너지로의 전환은 비용이 크다,0
+3,trend,추세,The upward trend continued.,상승 추세가 계속되었다,0
+3,upward,상승하는,Prices moved in an upward direction.,가격이 상승 방향으로 움직였다,0
+3,downward,하락하는,The forecast was revised downward.,전망치가 하향 조정되었다,0
+3,gradual,점진적인,We expect a gradual recovery.,우리는 점진적 회복을 예상한다,0
+3,steady,꾸준한,The firm posted steady gains.,그 회사는 꾸준한 성장을 기록했다,0
+3,sharp,급격한,There was a sharp increase in costs.,비용이 급격히 증가했다,0
+3,slight,약간의,We see a slight improvement.,약간의 개선이 보인다,0
+3,substantial,상당한,The savings were substantial.,절감액이 상당했다,0
+3,dramatic,극적인,The results show a dramatic change.,결과는 극적인 변화를 보여준다,0
+4,compare,비교하다,We compare two groups of firms.,우리는 두 기업 집단을 비교한다,0
+4,contrast,대조하다,The paper contrasts urban and rural areas.,그 논문은 도시와 농촌을 대조한다,0
+4,differ,다르다,Preferences differ across regions.,선호는 지역마다 다르다,0
+4,distinguish,구별하다,It is hard to distinguish cause from effect.,원인과 결과를 구별하기 어렵다,0
+4,differentiate,차별화하다,Firms differentiate their products.,기업은 제품을 차별화한다,0
+4,resemble,닮다,The pattern resembles earlier cycles.,그 패턴은 이전 주기와 닮았다,0
+4,similarity,유사성,The two cases share many similarities.,두 사례는 많은 유사성을 공유한다,0
+4,difference,차이,The difference is statistically significant.,그 차이는 통계적으로 유의하다,0
+4,distinction,구별,The distinction matters for policy.,그 구별은 정책에 중요하다,0
+4,whereas,반면에,Prices rose whereas wages stagnated.,임금은 정체된 반면 가격은 올랐다,0
+4,while,반면에·~하는 동안,While costs fell demand grew.,비용이 하락하는 동안 수요는 늘었다,0
+4,unlike,~와 달리,Unlike its rivals the firm grew.,경쟁사와 달리 그 회사는 성장했다,0
+4,likewise,마찬가지로,Likewise investment declined.,마찬가지로 투자도 감소했다,0
+4,similarly,유사하게,Similarly exports weakened.,유사하게 수출도 약화되었다,0
+4,conversely,반대로,Conversely savings increased.,반대로 저축은 증가했다,0
+4,on the contrary,그와 반대로,On the contrary the effect was positive.,그와 반대로 효과는 긍정적이었다,0
+4,in contrast,대조적으로,In contrast rural areas lagged.,대조적으로 농촌 지역은 뒤처졌다,0
+4,relative,상대적인,Relative prices changed little.,상대가격은 거의 변하지 않았다,0
+4,relatively,상대적으로,The test is relatively simple.,그 검정은 비교적 간단하다,0
+4,comparable,비교 가능한,The two samples are comparable.,두 표본은 비교 가능하다,0
+4,equivalent,동등한,The fine is equivalent to a tax.,그 벌금은 세금과 동등하다,0
+4,identical,동일한,The twins received identical treatment.,쌍둥이는 동일한 처치를 받았다,0
+4,distinct,뚜렷이 다른,We identify three distinct phases.,우리는 세 가지 뚜렷한 국면을 식별한다,0
+4,diverse,다양한,The city has a diverse population.,그 도시는 다양한 인구를 가진다,0
+4,various,여러 가지의,Various methods yield similar results.,여러 방법이 유사한 결과를 낸다,0
+4,vary,다양하다,Effects vary by age group.,효과는 연령대별로 다르다,0
+4,variation,변동·차이,Regional variation is large.,지역 간 차이가 크다,0
+4,range,범위,Estimates range from two to five.,추정치는 2에서 5 사이다,0
+4,extent,정도,The extent of the damage is unclear.,피해의 정도는 불분명하다,0
+4,degree,정도,The two differ in degree not kind.,둘은 종류가 아니라 정도에서 다르다,0
+4,considerable,상당한,There is considerable uncertainty.,상당한 불확실성이 있다,0
+4,significant,유의한·중요한,The gap is significant.,그 격차는 유의미하다,0
+4,negligible,무시할 만한,The cost is negligible.,그 비용은 무시할 만하다,0
+4,marginal,미미한·한계의,The improvement was marginal.,개선은 미미했다,0
+4,modest,크지 않은,The gains were modest.,성과는 크지 않았다,0
+4,notable,주목할 만한,There is notable variation.,주목할 만한 변동이 있다,0
+4,exceed,초과하다,Benefits exceed costs.,편익이 비용을 초과한다,0
+4,surpass,능가하다,Online sales surpassed store sales.,온라인 판매가 매장 판매를 능가했다,0
+4,outweigh,~보다 크다,The gains outweigh the risks.,이득이 위험보다 크다,0
+4,superior,우월한,The new method is superior.,새 방법이 더 우수하다,0
+4,inferior,열등한,The cheaper option is inferior.,더 싼 선택지는 품질이 낮다,0
+4,dominant,지배적인,The firm holds a dominant position.,그 회사는 지배적 지위를 가진다,0
+4,prevalent,만연한·흔한,Remote work is now prevalent.,원격 근무가 이제 흔하다,0
+4,widespread,광범위한,The practice is widespread.,그 관행은 광범위하다,0
+4,common,흔한,Delays are common in winter.,겨울에는 지연이 흔하다,0
+4,rare,드문,Such events are rare.,그런 사건은 드물다,0
+4,exceptional,예외적인,This was an exceptional year.,올해는 예외적인 해였다,0
+4,typical,전형적인,A typical household spends more.,전형적인 가구는 더 많이 지출한다,0
+4,average,평균의,The average wage rose slightly.,평균 임금이 약간 올랐다,0
+4,extreme,극단적인,Extreme values distort the mean.,극단값은 평균을 왜곡한다,0
+5,research,연구,Recent research supports this view.,최근 연구가 이 견해를 뒷받침한다,0
+5,study,연구(하다),The study covers ten countries.,그 연구는 10개국을 다룬다,0
+5,investigate,조사하다,We investigate the causes of exit.,우리는 퇴출의 원인을 조사한다,0
+5,examine,검토하다,The paper examines wage dynamics.,그 논문은 임금 동학을 검토한다,0
+5,explore,탐구하다,We explore several explanations.,우리는 여러 설명을 탐구한다,0
+5,analyze,분석하다,We analyze transaction-level data.,우리는 거래 단위 데이터를 분석한다,0
+5,analysis,분석,The analysis confirms the pattern.,분석은 그 패턴을 확인한다,0
+5,method,방법,We use standard methods.,우리는 표준적 방법을 사용한다,0
+5,methodology,방법론,The methodology is described below.,방법론은 아래에 기술된다,0
+5,approach,접근법,We take a structural approach.,우리는 구조적 접근을 취한다,0
+5,procedure,절차,The procedure has three steps.,그 절차는 세 단계로 구성된다,0
+5,process,과정,The review process took months.,심사 과정은 몇 달이 걸렸다,0
+5,experiment,실험,The experiment ran for six weeks.,실험은 6주간 진행되었다,0
+5,observation,관측치·관찰,The sample has one million observations.,표본에는 백만 개의 관측치가 있다,0
+5,survey,설문조사,The survey covered two thousand households.,설문은 2천 가구를 대상으로 했다,0
+5,questionnaire,설문지,Participants completed a questionnaire.,참가자들은 설문지를 작성했다,0
+5,interview,면접·인터뷰,We conducted in-depth interviews.,우리는 심층 인터뷰를 수행했다,0
+5,sample,표본,The sample may not be representative.,표본이 대표성이 없을 수 있다,0
+5,participant,참가자,Each participant received a reward.,각 참가자는 보상을 받았다,0
+5,subject,피험자·주제,Subjects were randomly assigned.,피험자들은 무작위로 배정되었다,0
+5,data,데이터,The data come from tax records.,데이터는 세금 기록에서 나온다,0
+5,evidence,증거,We find evidence of learning.,우리는 학습의 증거를 발견한다,0
+5,finding,발견·결과,The key finding is robust.,핵심 결과는 강건하다,0
+5,result,결과,Results are reported in Table 3.,결과는 표 3에 보고된다,0
+5,hypothesis,가설,The data reject this hypothesis.,데이터는 이 가설을 기각한다,0
+5,theory,이론,The theory predicts entry.,이론은 진입을 예측한다,0
+5,framework,틀,We develop a simple framework.,우리는 간단한 틀을 개발한다,0
+5,model,모형,The model fits the data well.,모형은 데이터에 잘 맞는다,0
+5,variable,변수,The key variable is firm size.,핵심 변수는 기업 규모다,0
+5,measure,측정하다·지표,We measure quality with ratings.,우리는 평점으로 품질을 측정한다,0
+5,measurement,측정,Measurement error biases estimates.,측정 오차는 추정치를 편향시킨다,0
+5,assess,평가하다,We assess the policy's impact.,우리는 정책의 영향을 평가한다,0
+5,evaluate,평가하다,The program was evaluated twice.,그 프로그램은 두 번 평가되었다,0
+5,estimate,추정하다·추정치,We estimate demand elasticities.,우리는 수요 탄력성을 추정한다,0
+5,calculate,계산하다,We calculate the implied markup.,우리는 내재된 마크업을 계산한다,0
+5,identify,식별하다,The variation identifies the effect.,그 변동이 효과를 식별한다,0
+5,classify,분류하다,Firms are classified by industry.,기업은 산업별로 분류된다,0
+5,categorize,범주화하다,Responses were categorized by theme.,응답은 주제별로 범주화되었다,0
+5,criteria,기준,The criteria are listed below.,기준은 아래에 나열된다,0
+5,standard,기준·표준,The product meets safety standards.,그 제품은 안전 기준을 충족한다,0
+5,valid,타당한,The instrument is valid.,그 도구변수는 타당하다,0
+5,reliable,신뢰할 수 있는,The source is reliable.,그 출처는 신뢰할 수 있다,0
+5,accurate,정확한,The forecast proved accurate.,그 예측은 정확한 것으로 판명됐다,0
+5,precise,정밀한,The estimates are precise.,추정치가 정밀하다,0
+5,objective,객관적인,We need objective evidence.,우리는 객관적 증거가 필요하다,0
+5,subjective,주관적인,Ratings are inherently subjective.,평점은 본질적으로 주관적이다,0
+5,bias,편향,Selection bias is a concern.,선택 편향이 우려된다,0
+5,limitation,한계,We discuss several limitations.,우리는 몇 가지 한계를 논의한다,0
+5,scope,범위,That question is beyond our scope.,그 질문은 우리 범위를 벗어난다,0
+5,replicate,재현하다,Later studies replicated the result.,후속 연구들이 그 결과를 재현했다,0
+6,proportion,비율,A large proportion of firms exited.,상당한 비율의 기업이 퇴출했다,0
+6,percentage,백분율,The percentage of renters rose.,임차인 비율이 올랐다,0
+6,ratio,비,The debt ratio is high.,부채 비율이 높다,0
+6,rate,비율·속도,The savings rate declined.,저축률이 하락했다,0
+6,figure,수치,Official figures understate inflation.,공식 수치는 물가상승을 과소평가한다,0
+6,statistic,통계,This statistic is often misread.,이 통계는 종종 잘못 읽힌다,0
+6,majority,다수,The majority voted in favor.,다수가 찬성표를 던졌다,0
+6,minority,소수,Only a minority disagreed.,소수만이 반대했다,0
+6,approximately,대략,The city has approximately one million residents.,그 도시 인구는 약 백만 명이다,0
+6,roughly,대략,Roughly half the sample is female.,표본의 약 절반이 여성이다,0
+6,nearly,거의,Nearly all firms complied.,거의 모든 기업이 준수했다,0
+6,precisely,정확히,The effect is precisely estimated.,그 효과는 정밀하게 추정된다,0
+6,respectively,각각,Prices rose 3 and 5 percent respectively.,가격이 각각 3과 5퍼센트 올랐다,0
+6,on average,평균적으로,On average workers commute an hour.,평균적으로 노동자는 한 시간 통근한다,0
+6,per capita,1인당,Per capita income doubled.,1인당 소득이 두 배가 되었다,0
+6,threshold,임계값,Sales fell below the threshold.,매출이 임계값 아래로 떨어졌다,0
+6,baseline,기준선,We compare against the baseline.,우리는 기준선과 비교한다,0
+6,benchmark,기준·벤치마크,The index serves as a benchmark.,그 지수는 기준 역할을 한다,0
+6,correlation,상관관계,Correlation does not imply causation.,상관관계가 인과를 의미하지 않는다,0
+6,correlate,상관되다,Education correlates with income.,교육은 소득과 상관된다,0
+6,distribution,분포,The income distribution is skewed.,소득 분포가 치우쳐 있다,0
+6,deviation,편차,The standard deviation is large.,표준편차가 크다,0
+6,median,중앙값,The median wage barely moved.,중위 임금은 거의 움직이지 않았다,0
+6,mean,평균,The mean hides important variation.,평균은 중요한 변동을 감춘다,0
+6,aggregate,총량(의),Aggregate demand weakened.,총수요가 약화되었다,0
+6,cumulative,누적된,The cumulative effect is large.,누적 효과가 크다,0
+6,net,순(純)-,Net exports turned negative.,순수출이 마이너스로 돌아섰다,0
+6,gross,총(總)-,Gross output grew steadily.,총산출이 꾸준히 늘었다,0
+6,output,산출,Factory output fell in May.,5월에 공장 산출이 감소했다,0
+6,input,투입,Labor is the main input.,노동이 주된 투입 요소다,0
+6,revenue,수입·매출,Revenue grew faster than costs.,매출이 비용보다 빨리 늘었다,0
+6,cost,비용,Fixed costs are substantial.,고정비용이 상당하다,0
+6,expenditure,지출,Public expenditure on health rose.,보건 공공지출이 늘었다,0
+6,budget,예산,The budget was cut by ten percent.,예산이 10퍼센트 삭감되었다,0
+6,surplus,흑자·잉여,The country runs a trade surplus.,그 나라는 무역흑자를 낸다,0
+6,deficit,적자,The deficit widened last year.,작년에 적자가 확대되었다,0
+6,growth rate,성장률,The growth rate slowed to two percent.,성장률이 2퍼센트로 둔화되었다,0
+6,make up,(비중을) 차지하다,Imports make up half of supply.,수입이 공급의 절반을 차지한다,0
+6,constitute,구성하다,Women constitute half the workforce.,여성이 노동력의 절반을 구성한다,0
+6,comprise,~로 이루어지다,The index comprises thirty stocks.,그 지수는 30개 종목으로 구성된다,0
+6,represent,차지하다·나타내다,Exports represent a third of GDP.,수출이 GDP의 3분의 1을 차지한다,0
+6,amount to,~에 달하다,Losses amounted to a billion dollars.,손실이 10억 달러에 달했다,0
+6,equal,~와 같다,Supply equals demand in equilibrium.,균형에서 공급은 수요와 같다,0
+6,sum,합계,The sum exceeds one billion.,합계가 10억을 넘는다,0
+6,projection,전망치,The projection assumes stable prices.,그 전망치는 안정적 물가를 가정한다,0
+6,forecast,예측,The forecast was too optimistic.,그 예측은 지나치게 낙관적이었다,0
+6,quarter,분기,Growth slowed in the second quarter.,2분기에 성장이 둔화되었다,0
+6,annual,연간의,Annual inflation reached four percent.,연간 물가상승률이 4퍼센트에 달했다,0
+6,volume,규모·거래량,Trading volume hit a record.,거래량이 기록을 세웠다,0
+6,share,비중·점유율,The firm's market share fell.,그 회사의 시장점유율이 하락했다,0
+7,crucial,결정적인,Timing is crucial for success.,시점이 성공에 결정적이다,0
+7,essential,필수적인,Sleep is essential for health.,수면은 건강에 필수적이다,0
+7,vital,매우 중요한,Small firms are vital to the economy.,소기업은 경제에 매우 중요하다,0
+7,critical,대단히 중요한,This assumption is critical.,이 가정은 대단히 중요하다,0
+7,fundamental,근본적인,There is a fundamental difference.,근본적인 차이가 있다,0
+7,key,핵심적인,Education is a key determinant.,교육은 핵심 결정 요인이다,0
+7,primary,주된,Our primary goal is accuracy.,우리의 주된 목표는 정확성이다,0
+7,secondary,부차적인,Cost is a secondary concern.,비용은 부차적인 문제다,0
+7,principal,주요한,The principal cause is underinvestment.,주요 원인은 과소투자다,0
+7,major,주요한,This is a major limitation.,이것은 주요한 한계다,0
+7,minor,사소한,The differences are minor.,차이는 사소하다,0
+7,relevant,관련 있는,Only relevant variables are included.,관련 변수만 포함된다,0
+7,irrelevant,무관한,That detail is irrelevant here.,그 세부사항은 여기서 무관하다,0
+7,appropriate,적절한,An appropriate benchmark is needed.,적절한 기준이 필요하다,0
+7,adequate,충분한·적절한,The sample is adequate for our test.,표본은 검정에 충분하다,0
+7,sufficient,충분한,There is sufficient evidence.,충분한 증거가 있다,0
+7,insufficient,불충분한,Funding proved insufficient.,자금이 불충분한 것으로 드러났다,0
+7,necessary,필요한,Reform is necessary but not sufficient.,개혁은 필요하지만 충분하지 않다,0
+7,unnecessary,불필요한,The rule creates unnecessary costs.,그 규칙은 불필요한 비용을 만든다,0
+7,beneficial,유익한,Trade is mutually beneficial.,무역은 상호 유익하다,0
+7,harmful,해로운,The chemical is harmful to health.,그 화학물질은 건강에 해롭다,0
+7,detrimental,해로운,Uncertainty is detrimental to investment.,불확실성은 투자에 해롭다,0
+7,favorable,유리한,Conditions remain favorable.,여건이 여전히 유리하다,0
+7,adverse,불리한,Adverse effects were rare.,부작용은 드물었다,0
+7,effective,효과적인,The campaign was highly effective.,그 캠페인은 매우 효과적이었다,0
+7,efficient,효율적인,Markets allocate resources efficiently.,시장은 자원을 효율적으로 배분한다,0
+7,feasible,실행 가능한,The plan is technically feasible.,그 계획은 기술적으로 실행 가능하다,0
+7,practical,실용적인,We offer practical recommendations.,우리는 실용적 제안을 제시한다,0
+7,plausible,그럴듯한,This is a plausible explanation.,이는 그럴듯한 설명이다,0
+7,reasonable,합리적인,The assumption seems reasonable.,그 가정은 합리적으로 보인다,0
+7,rational,합리적인,Agents are assumed to be rational.,행위자는 합리적이라고 가정된다,0
+7,logical,논리적인,The argument follows a logical order.,그 논증은 논리적 순서를 따른다,0
+7,coherent,일관된,The theory provides a coherent account.,그 이론은 일관된 설명을 제공한다,0
+7,consistent,일치하는·일관된,The data are consistent with the model.,데이터는 모형과 일치한다,0
+7,inconsistent,모순되는,The two results are inconsistent.,두 결과는 모순된다,0
+7,contradictory,상충하는,The studies reach contradictory conclusions.,연구들이 상충하는 결론에 이른다,0
+7,ambiguous,모호한,The wording is ambiguous.,문구가 모호하다,0
+7,vague,막연한,The plan remains vague.,계획이 여전히 막연하다,0
+7,evident,분명한,The trend is evident in Figure 1.,그 추세는 그림 1에서 분명하다,0
+7,obvious,명백한,The answer is not obvious.,답은 명백하지 않다,0
+7,apparent,뚜렷한,No apparent pattern emerges.,뚜렷한 패턴이 나타나지 않는다,0
+7,doubtful,의심스러운,The claim is doubtful.,그 주장은 의심스럽다,0
+7,questionable,의문스러운,The data quality is questionable.,데이터 품질이 의문스럽다,0
+7,convincing,설득력 있는,The evidence is convincing.,증거가 설득력 있다,0
+7,compelling,강력한·설득력 있는,They present a compelling case.,그들은 강력한 논거를 제시한다,0
+7,misleading,오해를 부르는,Averages can be misleading.,평균은 오해를 부를 수 있다,0
+7,flawed,결함 있는,The design is seriously flawed.,그 설계는 심각한 결함이 있다,0
+7,sound,건전한·타당한,The reasoning is sound.,그 추론은 타당하다,0
+7,robust,강건한,The result is robust to controls.,그 결과는 통제변수에 강건하다,0
+7,promising,유망한,This is a promising direction.,이는 유망한 방향이다,0
+8,policy,정책,The policy targets low-income families.,그 정책은 저소득 가구를 겨냥한다,0
+8,regulation,규제,New regulations raised compliance costs.,새 규제가 준수 비용을 높였다,0
+8,legislation,입법·법률,The legislation passed narrowly.,그 법안은 가까스로 통과되었다,0
+8,implement,시행하다,The city implemented congestion pricing.,그 도시는 혼잡통행료를 시행했다,0
+8,enforce,집행하다,The rules are weakly enforced.,규칙이 느슨하게 집행된다,0
+8,adopt,채택하다,Many states adopted the standard.,많은 주가 그 기준을 채택했다,0
+8,abolish,폐지하다,The tax was abolished in 2020.,그 세금은 2020년에 폐지되었다,0
+8,reform,개혁(하다),Pension reform is overdue.,연금 개혁이 시급하다,0
+8,revise,개정하다,The law was revised last year.,그 법은 작년에 개정되었다,0
+8,subsidy,보조금,Fuel subsidies distort prices.,연료 보조금은 가격을 왜곡한다,0
+8,subsidize,보조금을 주다,The state subsidizes childcare.,정부가 보육을 보조한다,0
+8,taxation,과세,Progressive taxation reduces inequality.,누진 과세는 불평등을 줄인다,0
+8,welfare,복지·후생,The merger reduced consumer welfare.,그 합병은 소비자 후생을 감소시켰다,0
+8,infrastructure,사회기반시설,Aging infrastructure needs investment.,노후 기반시설에 투자가 필요하다,0
+8,institution,제도·기관,Strong institutions support growth.,견고한 제도는 성장을 뒷받침한다,0
+8,authority,당국·권한,The authority approved the merger.,당국이 합병을 승인했다,0
+8,public,공공의,Public opinion shifted quickly.,여론이 빠르게 바뀌었다,0
+8,private,민간의,Private investment picked up.,민간 투자가 회복되었다,0
+8,sector,부문,The service sector dominates employment.,서비스 부문이 고용을 지배한다,0
+8,industry,산업,The industry is highly concentrated.,그 산업은 매우 집중되어 있다,0
+8,market,시장,The market cleared quickly.,시장이 빠르게 청산되었다,0
+8,competition,경쟁,Competition lowers prices.,경쟁은 가격을 낮춘다,0
+8,monopoly,독점,The firm holds a near monopoly.,그 회사는 거의 독점 상태다,0
+8,consumer,소비자,Consumers benefit from entry.,소비자는 진입으로 이득을 본다,0
+8,producer,생산자,Producers bear part of the tax.,생산자가 세금의 일부를 부담한다,0
+8,demand,수요,Demand is price inelastic.,수요는 가격에 비탄력적이다,0
+8,supply,공급,Housing supply is constrained.,주택 공급이 제약되어 있다,0
+8,employment,고용,Employment recovered slowly.,고용이 서서히 회복되었다,0
+8,unemployment,실업,Youth unemployment remains high.,청년 실업이 여전히 높다,0
+8,labor,노동,Labor costs are rising.,노동 비용이 오르고 있다,0
+8,wage,임금,Minimum wages were raised.,최저임금이 인상되었다,0
+8,income,소득,Household income stagnated.,가계 소득이 정체되었다,0
+8,inequality,불평등,Wealth inequality has widened.,자산 불평등이 확대되었다,0
+8,poverty,빈곤,The program cut child poverty.,그 프로그램은 아동 빈곤을 줄였다,0
+8,urban,도시의,Urban rents rose fastest.,도시 임대료가 가장 빨리 올랐다,0
+8,rural,농촌의,Rural hospitals are closing.,농촌 병원들이 문을 닫고 있다,0
+8,population,인구,The population is aging rapidly.,인구가 빠르게 고령화되고 있다,0
+8,migration,이주,Migration reshaped the labor market.,이주가 노동시장을 재편했다,0
+8,globalization,세계화,Globalization intensified competition.,세계화는 경쟁을 심화시켰다,0
+8,sustainability,지속가능성,Sustainability is now a priority.,지속가능성이 이제 우선순위다,0
+8,environment,환경,The plant harmed the local environment.,그 공장은 지역 환경을 해쳤다,0
+8,pollution,오염,Air pollution shortens lives.,대기오염은 수명을 단축한다,0
+8,resource,자원,Resources are allocated by prices.,자원은 가격에 의해 배분된다,0
+8,scarcity,희소성,Scarcity drives up prices.,희소성은 가격을 끌어올린다,0
+8,allocate,배분하다,Funds were allocated to schools.,자금이 학교에 배분되었다,0
+8,distribute,분배하다,Aid was distributed unevenly.,원조가 불균등하게 분배되었다,0
+8,invest,투자하다,Firms invest less under uncertainty.,기업은 불확실성 속에서 덜 투자한다,0
+8,fund,자금을 대다,The project is publicly funded.,그 사업은 공적 자금으로 운영된다,0
+8,stakeholder,이해관계자,All stakeholders were consulted.,모든 이해관계자와 협의했다,0
+8,compliance,준수,Compliance with the rule is costly.,규정 준수는 비용이 크다,0
+9,moreover,게다가,"Moreover, the costs keep rising.",게다가 비용이 계속 오른다,0
+9,furthermore,더욱이,"Furthermore, the sample is small.",더욱이 표본이 작다,0
+9,in addition,추가로,"In addition, we control for firm size.",추가로 우리는 기업 규모를 통제한다,0
+9,additionally,추가적으로,"Additionally, we test robustness.",추가적으로 강건성을 검정한다,0
+9,besides,게다가,"Besides, the plan is too costly.",게다가 그 계획은 비용이 너무 크다,0
+9,however,그러나,"However, the effect fades quickly.",그러나 효과는 빠르게 사라진다,0
+9,nevertheless,그럼에도,"Nevertheless, the firm survived.",그럼에도 그 회사는 살아남았다,0
+9,nonetheless,그럼에도 불구하고,"Nonetheless, doubts remain.",그럼에도 의문이 남는다,0
+9,although,비록 ~이지만,"Although costly, the program worked.",비용은 컸지만 그 프로그램은 효과가 있었다,0
+9,though,그렇지만,"The data, though, are incomplete.",그렇지만 데이터는 불완전하다,0
+9,despite,~에도 불구하고,"Despite the risks, investors stayed.",위험에도 불구하고 투자자들은 남았다,0
+9,in spite of,~에도 불구하고,"In spite of the ban, sales continued.",금지에도 불구하고 판매는 계속되었다,0
+9,regardless of,~와 무관하게,The rule applies regardless of size.,그 규칙은 규모와 무관하게 적용된다,0
+9,therefore,그러므로,"Therefore, we reject the hypothesis.",그러므로 우리는 가설을 기각한다,0
+9,thus,따라서,"Thus, prices must adjust.",따라서 가격이 조정되어야 한다,0
+9,hence,그런 이유로,Hence the need for regulation.,그런 이유로 규제가 필요하다,0
+9,consequently,결과적으로,"Consequently, output fell.",결과적으로 산출이 감소했다,0
+9,as a result,그 결과,"As a result, entry slowed.",그 결과 진입이 둔화되었다,0
+9,accordingly,그에 따라,"Accordingly, we revise the model.",그에 따라 우리는 모형을 수정한다,0
+9,for instance,예를 들어,"For instance, consider two firms.",예를 들어 두 기업을 생각해보라,0
+9,for example,예를 들어,"For example, prices differ by region.",예를 들어 가격은 지역별로 다르다,0
+9,namely,즉,"One factor matters most, namely price.",한 요인이 가장 중요한데 즉 가격이다,0
+9,specifically,구체적으로,"Specifically, we use panel data.",구체적으로 우리는 패널 데이터를 쓴다,0
+9,in particular,특히,"In particular, small firms suffered.",특히 소기업이 타격을 입었다,0
+9,in other words,다시 말해,"In other words, demand is elastic.",다시 말해 수요는 탄력적이다,0
+9,that is,즉,"The price is sticky, that is, slow to adjust.",가격이 경직적이다 즉 느리게 조정된다,0
+9,in fact,사실,"In fact, the opposite occurred.",사실 정반대가 일어났다,0
+9,indeed,실제로,"Indeed, the gap widened.",실제로 격차가 확대되었다,0
+9,admittedly,인정하건대,"Admittedly, the sample is limited.",인정하건대 표본이 제한적이다,0
+9,arguably,거의 틀림없이,This is arguably the best measure.,이것이 아마 최선의 지표일 것이다,0
+9,notably,특히,"Notably, the effect is larger for women.",특히 여성에게 효과가 더 크다,0
+9,primarily,주로,Growth was primarily export-driven.,성장은 주로 수출 주도였다,0
+9,ultimately,궁극적으로,"Ultimately, consumers pay the tax.",궁극적으로 소비자가 세금을 부담한다,0
+9,initially,처음에는,"Initially, the policy seemed to work.",처음에는 정책이 효과 있어 보였다,0
+9,subsequently,그 후에,"Subsequently, the rule was repealed.",그 후에 그 규칙은 폐지되었다,0
+9,meanwhile,그동안에,"Meanwhile, rivals cut prices.",그동안 경쟁사들은 가격을 내렸다,0
+9,simultaneously,동시에,Both markets opened simultaneously.,두 시장이 동시에 열렸다,0
+9,eventually,결국,"Eventually, the firm exited.",결국 그 회사는 퇴출했다,0
+9,in conclusion,결론적으로,"In conclusion, the reform helped.",결론적으로 개혁은 도움이 되었다,0
+9,to sum up,요약하면,"To sum up, three lessons emerge.",요약하면 세 가지 교훈이 나온다,0
+9,overall,전반적으로,"Overall, the evidence is mixed.",전반적으로 증거는 엇갈린다,0
+9,in general,일반적으로,"In general, larger firms pay more.",일반적으로 큰 기업이 더 많이 지불한다,0
+9,in terms of,~의 측면에서,"In terms of cost, the plan fails.",비용 측면에서 그 계획은 실패다,0
+9,with respect to,~에 관하여,The effect differs with respect to age.,효과는 연령에 따라 다르다,0
+9,regarding,~에 관해,"Regarding identification, we use an IV.",식별에 관해 우리는 도구변수를 쓴다,0
+9,concerning,~에 관한,Questions remain concerning the data.,데이터에 관한 의문이 남는다,0
+9,given that,~을 고려하면,"Given that demand is elastic, prices matter.",수요가 탄력적임을 고려하면 가격이 중요하다,0
+9,provided that,~라는 조건하에,The result holds provided that entry is free.,진입이 자유롭다면 그 결과는 성립한다,0
+9,unless,~하지 않는 한,"Unless subsidized, the firm exits.",보조금이 없으면 그 회사는 퇴출한다,0
+9,on the other hand,반면에,"On the other hand, costs fell.",반면에 비용은 하락했다,0
+10,play a role,역할을 하다,Luck plays a role in success.,운은 성공에 역할을 한다,0
+10,take into account,고려하다,We take inflation into account.,우리는 물가상승을 고려한다,0
+10,take advantage of,활용하다,Firms take advantage of tax breaks.,기업은 세제 혜택을 활용한다,0
+10,give priority to,우선시하다,The city gives priority to safety.,그 도시는 안전을 우선시한다,0
+10,pay attention to,주목하다,Investors pay attention to earnings.,투자자는 실적에 주목한다,0
+10,put emphasis on,강조하다,The school puts emphasis on writing.,그 학교는 글쓰기를 강조한다,0
+10,make a difference,차이를 만들다,Small changes make a difference.,작은 변화가 차이를 만든다,0
+10,make sense,타당하다,The assumption makes sense here.,그 가정은 여기서 타당하다,0
+10,draw a conclusion,결론을 도출하다,We cannot draw a firm conclusion.,확고한 결론을 내릴 수 없다,0
+10,reach an agreement,합의에 이르다,The parties reached an agreement.,당사자들이 합의에 이르렀다,0
+10,meet the needs,필요를 충족하다,The service meets local needs.,그 서비스는 지역의 필요를 충족한다,0
+10,meet the standard,기준을 충족하다,The plant meets emission standards.,그 공장은 배출 기준을 충족한다,0
+10,raise awareness,인식을 높이다,The campaign raised awareness.,그 캠페인은 인식을 높였다,0
+10,pose a threat,위협이 되다,AI poses a threat to some jobs.,AI는 일부 일자리에 위협이 된다,0
+10,pose a problem,문제가 되다,Missing data pose a problem.,결측치는 문제가 된다,0
+10,address the issue,문제를 다루다,The paper addresses this issue.,그 논문은 이 문제를 다룬다,0
+10,tackle the problem,문제에 대처하다,The city tackled congestion head-on.,그 도시는 혼잡에 정면으로 대처했다,0
+10,cope with,대처하다,Households coped with higher prices.,가계는 높아진 물가에 대처했다,0
+10,deal with,다루다,The section deals with entry.,그 절은 진입을 다룬다,0
+10,carry out,수행하다,We carried out a field experiment.,우리는 현장 실험을 수행했다,0
+10,point of view,관점,"From an economic point of view, it fails.",경제적 관점에서 그것은 실패다,0
+10,in the long run,장기적으로,"In the long run, prices adjust.",장기적으로 가격은 조정된다,0
+10,in the short term,단기적으로,"In the short term, costs rise.",단기적으로 비용이 오른다,0
+10,at the expense of,~을 희생하여,Growth came at the expense of equity.,성장은 형평을 희생하며 왔다,0
+10,on behalf of,~을 대신하여,She spoke on behalf of the team.,그녀는 팀을 대표해 발언했다,0
+10,by means of,~을 수단으로,We identify by means of an IV.,우리는 도구변수를 수단으로 식별한다,0
+10,as opposed to,~와 대조적으로,We use panel as opposed to cross-section data.,우리는 횡단면이 아닌 패널 데이터를 쓴다,0
+10,with regard to,~에 관하여,"With regard to costs, little is known.",비용에 관해서는 알려진 바가 적다,0
+10,in response to,~에 대응하여,Firms cut prices in response to entry.,기업은 진입에 대응해 가격을 내렸다,0
+10,in favor of,~에 찬성하여,The court ruled in favor of the firm.,법원은 그 회사의 손을 들어주었다,0
+10,in charge of,~을 담당하는,She is in charge of the project.,그녀가 그 프로젝트를 담당한다,0
+10,on the basis of,~에 근거하여,Decisions are made on the basis of data.,결정은 데이터에 근거해 내려진다,0
+10,as a whole,전체로서,The economy as a whole slowed.,경제 전체가 둔화되었다,0
+10,to some extent,어느 정도,The claim is true to some extent.,그 주장은 어느 정도 사실이다,0
+10,to a large extent,상당 부분,Success depends to a large extent on timing.,성공은 상당 부분 시점에 달려 있다,0
+10,at stake,걸려 있는,Thousands of jobs are at stake.,수천 개의 일자리가 걸려 있다,0
+10,in place,시행 중인,Strict rules are already in place.,엄격한 규칙이 이미 시행 중이다,0
+10,in progress,진행 중인,The reform is still in progress.,개혁이 아직 진행 중이다,0
+10,under way,진행 중인,Negotiations are under way.,협상이 진행 중이다,0
+10,up to date,최신의,The figures are up to date.,그 수치는 최신이다,0
+10,out of date,구식의,The textbook is out of date.,그 교과서는 구식이다,0
+10,side effect,부작용,The policy had unintended side effects.,그 정책에는 의도치 않은 부작용이 있었다,0
+10,trade-off,상충관계,There is a trade-off between speed and accuracy.,속도와 정확성 사이에 상충관계가 있다,0
+10,turning point,전환점,The crisis was a turning point.,그 위기는 전환점이었다,0
+10,vicious cycle,악순환,Debt created a vicious cycle.,부채가 악순환을 만들었다,0
+10,common ground,공통 기반,The two sides found common ground.,양측은 공통 기반을 찾았다,0
+10,rule of thumb,경험 법칙,"As a rule of thumb, save ten percent.",경험 법칙으로 10퍼센트를 저축하라,0
+10,in line with,~에 부합하는,The results are in line with theory.,결과는 이론에 부합한다,0
+10,on the rise,증가 추세인,Remote work is on the rise.,원격 근무가 증가 추세다,0
+10,take place,일어나다,The transition took place gradually.,전환은 점진적으로 일어났다,0
