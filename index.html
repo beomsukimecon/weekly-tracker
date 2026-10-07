@@ -1,415 +1,403 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VOCA</title>
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="RDD 발표">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f3f4f1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>RDD Rehearsal Room</title>
+</head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
-  :root { color-scheme: light;
-    --bg:#f6f5f1; --card:#fff; --ink:#1f2328; --muted:#6b7280; --line:#e5e3dc;
-    --accent:#b45309; --accent-soft:#fef3e2; --green:#15803d; --blue:#1d4ed8; --blue-soft:#eff6ff; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",sans-serif;
-    font-size:15px; line-height:1.5; }
-  .wrap { max-width:640px; margin:0 auto; padding:14px 12px 60px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:12px; }
-  h2 { margin:0 0 10px; font-size:17px; }
-  h3 { margin:0 0 8px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:8px; }
-  h3 .cnt { font-weight:400; }
-  button.btn, label.btn { border:1px solid var(--line); background:#fbfaf7; color:var(--ink);
-    border-radius:9px; padding:9px 13px; font-size:14px; cursor:pointer; display:inline-block; }
-  button.btn:disabled { opacity:.45; }
-  button.btn.danger { color:#b91c1c; }
-  .seg { display:flex; gap:6px; margin-bottom:12px; }
-  .seg .btn { flex:1; text-align:center; }
-  .segbtn.on { background:var(--accent-soft); border-color:var(--accent); font-weight:700; }
-  .vrow { display:flex; gap:8px; flex-wrap:wrap; }
-  .vrow input, input.vlong { border:1px solid var(--line); border-radius:9px; padding:9px 11px; font-size:15px; background:#fbfaf7; outline:none; color:var(--ink); }
-  .vrow input { flex:1; min-width:120px; }
-  .vrow input:focus, input.vlong:focus { border-color:var(--accent); }
-  input.vlong { width:100%; margin-top:6px; }
-  input.vnum { width:64px; flex:0 0 64px !important; min-width:64px !important; }
-  select.vsortsel { border:1px solid var(--line); border-radius:9px; padding:8px; font-size:13.5px; background:#fbfaf7; color:var(--ink); outline:none; flex:0 0 auto; }
-  .hint { font-size:12px; color:var(--muted); margin:6px 0 0; }
-  .ventry { padding:8px 4px; border-bottom:1px solid var(--line); }
-  .vtop { display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
-  .vtop .vm { color:var(--muted); flex:1; min-width:120px; }
-  .vtop input[type=checkbox] { accent-color:var(--accent); width:16px; height:16px; align-self:center; flex-shrink:0; }
-  .vex { font-size:13px; color:var(--muted); font-style:italic; margin-top:3px; }
-  .vwrong { color:#b91c1c; font-size:12px; font-weight:700; }
-  .vdaytag { font-size:11px; color:var(--accent); font-weight:700; flex-shrink:0; }
-  .vsm { padding:3px 9px; font-size:12px; flex-shrink:0; }
-  .empty { color:var(--muted); font-size:14px; padding:8px 0; }
-  .quiz { background:var(--blue-soft); border-radius:12px; padding:14px; }
-  .quiz h3 { color:var(--blue); }
-  .qword { font-size:26px; font-weight:700; margin:12px 0; }
-  .qmean { font-size:16px; margin-bottom:6px; }
-  .qex { font-size:13.5px; color:var(--muted); font-style:italic; margin-bottom:12px; }
-  .qopt { display:block; width:100%; text-align:left; margin-top:7px; padding:11px 13px; font-size:15px; background:#fff; }
-  .qopt.correct { background:#ecfdf3; border-color:var(--green); font-weight:700; }
-  .qopt.wrongpick { background:#fef2f2; border-color:#b91c1c; }
-  .sync { font-size:12.5px; color:var(--muted); }
+/* Layout: teleprompter column — slide strip on top, script in the middle, one play bar pinned to the bottom. */
+:root{
+  --bg:#f3f4f1; --paper:#fbfbf9; --ink:#1d2321; --mute:#6c7470; --line:#d9ddd8;
+  --accent:#1f6b5c; --accent-soft:#dcebe6; --now:#fff6d6;
+  --f-read:"Source Serif 4", Georgia, serif;
+  --f-ui:"IBM Plex Sans KR", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --paper:#1b211f; --ink:#e6ebe8; --mute:#94a09a; --line:#2c3532;
+  --accent:#6cc4ae; --accent-soft:#1f3a33; --now:#2f2b18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --paper:#1b211f; --ink:#e6ebe8; --mute:#94a09a; --line:#2c3532;
+  --accent:#6cc4ae; --accent-soft:#1f3a33; --now:#2f2b18; color-scheme:dark}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);margin:0}
+.wrap{max-width:680px;margin:0 auto;padding-inline:16px;padding-block:0 150px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding-block:14px 8px;border-bottom:1px solid var(--line)}
+h1{font-family:var(--f-read);font-weight:600;font-size:1.15rem;margin:0 0 2px;text-wrap:balance}
+.sub{color:var(--mute);font-size:.8rem}
+.strip{display:flex;gap:6px;overflow-x:auto;padding-block:10px 2px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font-family:var(--f-mono);font-size:.75rem;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:5px 8px;cursor:pointer}
+.chip.on{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.chip.done{color:var(--mute)}
+section{padding-block:22px 6px;border-bottom:1px dashed var(--line)}
+.sh{display:flex;gap:10px;align-items:baseline;margin-bottom:10px;cursor:pointer}
+.sn{font-family:var(--f-mono);font-size:.75rem;color:var(--accent);letter-spacing:.04em}
+.st{font-family:var(--f-ui);font-weight:600;font-size:.9rem}
+.sd{margin-left:auto;font-family:var(--f-mono);font-size:.72rem;color:var(--mute);font-variant-numeric:tabular-nums}
+p{font-family:var(--f-read);font-size:1.06rem;line-height:1.62;margin:0 0 .7em;padding:4px 8px;margin-inline:-8px;border-radius:6px;cursor:pointer;transition:background .25s}
+p.now{background:var(--now)}
+p sub{font-size:.7em}
+.silent{color:var(--mute);font-style:italic;font-size:.9rem}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px));z-index:10}
+.bi{max-width:680px;margin:0 auto;display:grid;gap:8px}
+.prog{height:22px;position:relative;cursor:pointer}
+.prog::before{content:"";position:absolute;left:0;right:0;top:9px;height:4px;border-radius:2px;background:var(--line)}
+.fill{position:absolute;left:0;top:9px;height:4px;border-radius:2px;background:var(--accent);width:0}
+.row{display:flex;align-items:center;gap:10px}
+.tm{font-family:var(--f-mono);font-size:.78rem;color:var(--mute);font-variant-numeric:tabular-nums;min-width:0}
+button.ctl{font-family:var(--f-ui);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;height:40px;min-width:44px;font-size:.95rem;cursor:pointer}
+button.play{background:var(--accent);border-color:var(--accent);color:var(--paper);width:56px;height:46px;border-radius:23px;font-size:1.1rem}
+button:focus-visible,.chip:focus-visible,p:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sp{margin-left:auto;font-family:var(--f-mono);font-size:.82rem}
+@media (prefers-reduced-motion: reduce){p{transition:none}}
+
+/* --- tabs --- */
+.tabs{display:flex;gap:4px;margin-top:10px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:3px}
+.tab{flex:1;font-family:var(--f-ui);font-size:.85rem;font-weight:500;border:0;background:transparent;color:var(--mute);padding:7px 4px;border-radius:7px;cursor:pointer}
+.tab.on{background:var(--accent);color:var(--paper)}
+.hint{color:var(--mute);font-size:.8rem;line-height:1.5;margin:14px 0 4px}
+
+/* --- memorize: slide picker --- */
+.mchip{display:flex;flex-direction:column;align-items:center;gap:3px;padding:5px 7px 4px}
+.dots{display:flex;gap:2px}
+.dots i{width:4px;height:4px;border-radius:2px;background:var(--line)}
+.dots i.f{background:var(--accent)}
+.chip.on .dots i{background:color-mix(in srgb,var(--paper) 35%,transparent)}
+.chip.on .dots i.f{background:var(--paper)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
+.ch{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.lv{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:14px 0 6px}
+.lvb{font-family:var(--f-ui);font-size:.78rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:7px;padding:7px 2px;cursor:pointer;line-height:1.25}
+.lvb small{display:block;font-family:var(--f-mono);font-size:.66rem;color:var(--mute)}
+.lvb.on{border-color:var(--accent);background:var(--accent-soft)}
+.lvb.ok small{color:var(--accent)}
+.mp{display:flex;gap:8px;align-items:flex-start;margin-top:12px}
+.pb{flex:0 0 auto;width:30px;height:30px;border-radius:15px;border:1px solid var(--line);background:var(--bg);color:var(--accent);font-size:.7rem;cursor:pointer;margin-top:3px}
+.pb.on{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.mt{flex:1;min-width:0;font-family:var(--f-read);font-size:1.04rem;line-height:1.7;padding:2px 8px;border-radius:6px;cursor:pointer}
+.mt.open{background:var(--now)}
+.w{white-space:nowrap}
+.gap{display:inline-block;height:.12em;background:var(--mute);opacity:.45;vertical-align:baseline;margin-left:1px;border-radius:1px}
+.w.show .gap{display:none}
+.w .rest{display:none}
+.w.show .rest{display:inline}
+.cue{color:var(--mute);font-style:italic}
+.blank{color:var(--mute);font-family:var(--f-ui);font-size:.85rem;border:1px dashed var(--line);border-radius:6px;padding:8px 10px}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.btn{font-family:var(--f-ui);font-size:.88rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:9px 12px;cursor:pointer}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.rate{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+.rate .btn{padding:10px 4px}
+.nav2{display:flex;justify-content:space-between;margin-top:14px}
+.ctx{font-family:var(--f-read);font-size:.95rem;line-height:1.6;color:var(--mute);border-left:2px solid var(--line);padding-left:10px;margin:12px 0}
+.ctx b{font-family:var(--f-ui);font-size:.72rem;font-weight:500;letter-spacing:.04em;display:block;margin-bottom:2px}
+.ans{font-family:var(--f-read);font-size:1.08rem;line-height:1.65;background:var(--now);border-radius:8px;padding:10px 12px;margin-top:10px}
+.score{font-family:var(--f-mono);font-size:.78rem;color:var(--mute);font-variant-numeric:tabular-nums}
 </style>
-</head>
-<body>
+
 <div class="wrap">
-  <div class="card">
-    <h2>VOCA <span class="sync" id="syncMsg"></span></h2>
-    <div class="seg" id="seg"></div>
-    <div id="main"></div>
-  </div>
+  <header>
+    <h1>Sensitivity Analysis in Sharp RD Designs</h1>
+    <div class="sub">발표 녹음 · 남성 음성 · 전체 <span id="tot"></span></div>
+    <div class="tabs" role="tablist">
+      <button class="tab on" id="t-listen" data-v="listen">듣기</button>
+      <button class="tab" id="t-mem" data-v="mem">암기</button>
+      <button class="tab" id="t-first" data-v="first">첫 문장</button>
+    </div>
+    <nav class="strip" id="strip"></nav>
+    <nav class="strip" id="mstrip" hidden></nav>
+  </header>
+  <main id="script"></main>
+
+  <main id="mem" hidden>
+    <div class="hint">단계를 올리며 소리 내서 말해보세요. 막히면 문단이나 단어를 탭해서 확인하고, 끝나면 스스로 평가하세요. 진도는 이 기기에 저장돼요.</div>
+    <div class="card" id="mcard"></div>
+  </main>
+
+  <main id="first" hidden>
+    <div class="hint">슬라이드 제목과 앞 슬라이드의 마지막 문장을 보고, 이 슬라이드의 첫 문장을 말해보세요. 넘어가는 순간에 막히지 않게 하는 연습이에요.</div>
+    <div class="card" id="fcard"></div>
+  </main>
 </div>
 
+<audio id="au2" preload="auto"></audio>
+
+<div class="bar" id="lbar">
+  <div class="bi">
+    <div class="prog" id="prog"><div class="fill" id="fill"></div></div>
+    <div class="row">
+      <button class="ctl" id="prev" aria-label="이전 슬라이드">⏮</button>
+      <button class="ctl play" id="play" aria-label="재생">▶</button>
+      <button class="ctl" id="next" aria-label="다음 슬라이드">⏭</button>
+      <span class="tm" id="tm">0:00</span>
+      <button class="ctl sp" id="speed" aria-label="속도">1.0×</button>
+    </div>
+  </div>
+</div>
+<audio id="au" preload="auto"></audio>
+
 <script>
-const LS_KEY = "vocaApp.v1";
-const VCATS = [["gre","GRE"],["toefl","TOEFL"],["writing","Writing"]];
-// 저장소에 올려둔 CSV — 페이지 열 때 자동으로 불러와 병합 (중복 제외)
-const SYNC_FILES = ["GRE.csv","TOEFL.csv","writing.csv","voca_gre.csv","voca_toefl.csv","voca_writing.csv"];
+const SECS = [{"id": "S1", "num": "1", "title": "Title", "paras": [{"show": "Good morning. I’m Beomsu kim, a graduate student at Sogang University.", "say": "Good morning. I'm Bum-soo Kim, a graduate student at Sogang University."}, {"show": "Today, I’ll present our paper, Sensitivity Analysis in Sharp Regression Discontinuity Designs.", "say": "Today, I'll present our paper, Sensitivity Analysis in Sharp Regression Discontinuity Designs."}]}, {"id": "S2", "num": "2", "title": "Introduction", "paras": [{"show": "In a sharp regression discontinuity design, treatment is assigned when a running variable exceeds a known cutoff.", "say": "In a sharp regression discontinuity design, treatment is assigned when a running variable exceeds a known cutoff."}, {"show": "Under standard identifying assumptions, the RD design identifies a causal treatment effect at the cutoff.", "say": "Under standard identifying assumptions, the R-D design identifies a causal treatment effect at the cutoff."}, {"show": "For example, consider a high-school admission setting, where students above an admission-score cutoff are assigned to a better high school. We may be interested in how this assignment affects their later exam scores.", "say": "For example, consider a high-school admission setting, where students above an admission-score cutoff are assigned to a better high school. We may be interested in how this assignment affects their later exam scores."}, {"show": "A conventional RD identifies this effect for students at the admission cutoff.", "say": "A conventional R-D identifies this effect for students at the admission cutoff."}]}, {"id": "S3", "num": "3", "title": "Introduction", "paras": [{"show": "However, empirical questions may concern treatment effects beyond the cutoff.", "say": "However, empirical questions may concern treatment effects beyond the cutoff."}, {"show": "We may be interested in effects for subpopulations at other values of the running variable, or for the overall population.", "say": "We may be interested in effects for subpopulations at other values of the running variable, or for the overall population."}, {"show": "In the school example, we may want to know the effect for students with admission scores away from the cutoff, or for all students. These effects may differ from the cutoff effect because treatment effects can vary with the admission score.", "say": "In the school example, we may want to know the effect for students with admission scores away from the cutoff, or for all students. These effects may differ from the cutoff effect because treatment effects can vary with the admission score."}, {"show": "The challenge is that, without further assumptions, these effects are not identified.", "say": "The challenge is that, without further assumptions, these effects are not identified."}, {"show": "For students below the cutoff, we do not observe their potential outcomes under assignment to the better school. For students above the cutoff, we do not observe their potential outcomes without that assignment.", "say": "For students below the cutoff, we do not observe their potential outcomes under assignment to the better school. For students above the cutoff, we do not observe their potential outcomes without that assignment."}]}, {"id": "S4", "num": "4", "title": "This Paper", "paras": [{"show": "To address this problem, we provide a framework for extrapolating treatment effects beyond the cutoff in sharp RD designs.", "say": "To address this problem, we provide a framework for extrapolating treatment effects beyond the cutoff in sharp R-D designs."}, {"show": "The key idea is to impose a smoothness assumption that the conditional distribution of each potential outcome does not change too sharply with the running variable.", "say": "The key idea is to impose a smoothness assumption that the conditional distribution of each potential outcome does not change too sharply with the running variable."}, {"show": "Importantly, this approach does not require any additional variables.", "say": "Importantly, this approach does not require any additional variables."}, {"show": "In the school example, if two groups have similar admission scores, their later exam score distributions should be similar, both under assignment to the better school and under non-assignment.", "say": "In the school example, if two groups have similar admission scores, their later exam score distributions should be similar, both under assignment to the better school and under non-assignment."}, {"show": "Using this smoothness assumption, we derive sharp bounds on the counterfactual distributions.", "say": "Using this smoothness assumption, we derive sharp bounds on the counterfactual distributions."}, {"show": "Finally, by varying the degree of smoothness, we can assess the sensitivity of the bounds.", "say": "Finally, by varying the degree of smoothness, we can assess the sensitivity of the bounds."}]}, {"id": "S5", "num": "5", "title": "This Paper", "paras": [{"show": "Because we bound counterfactual distributions, our framework allows us to study both distributional and mean treatment effects.", "say": "Because we bound counterfactual distributions, our framework allows us to study both distributional and mean treatment effects."}, {"show": "We then revisit the Romanian high-school application of Pop-Eleches and Urquiola.", "say": "We then revisit the Romanian high-school application of Pop Eh-leh-kess and Oor-kee-oh-la."}, {"show": "Our results suggest that effects away from the cutoff and for the overall population may differ from the cutoff effect, particularly for distributional effects.", "say": "Our results suggest that effects away from the cutoff and for the overall population may differ from the cutoff effect, particularly for distributional effects."}]}, {"id": "S6", "num": "6", "title": "Related Work", "paras": [{"show": "Because of the time limit, I’ll skip this part.", "say": "Because of the time limit, I'll skip this part."}]}, {"id": "S7", "num": "7", "title": "Model and Identification", "paras": [{"show": "Let me now turn to the model and identification.", "say": "Let me now turn to the model and identification."}]}, {"id": "S8", "num": "8", "title": "Model", "paras": [{"show": "Let <i>R</i> denote the running variable and <i>c</i> the cutoff.", "say": "Let R denote the running variable and c the cutoff."}, {"show": "Treatment is assigned when <i>R</i> is at least <i>c</i>.", "say": "Treatment is assigned when R is at least c."}, {"show": "Let Y<sub>1</sub> and Y<sub>0</sub> denote the potential outcomes under treatment and control.", "say": "Let Y one and Y zero denote the potential outcomes under treatment and control."}, {"show": "We observe Y<sub>1</sub> in the treated region, ℛ<sub>1</sub>, and Y<sub>0</sub> in the control region, ℛ<sub>0</sub>.", "say": "We observe Y one in the treated region, R one, and Y zero in the control region, R zero."}, {"show": "Let F<sub>Y<sub>d</sub>|R</sub> denote the conditional distribution of the potential outcome Y<sub>d</sub>. In words, this is the outcome distribution for the subpopulation with the running variable equal to <i>r</i>.", "say": "Let F of Y d given R denote the conditional distribution of the potential outcome Y d. In words, this is the outcome distribution for the subpopulation with the running variable equal to r."}, {"show": "Our identification targets are the counterfactual distributions on the opposite side of the cutoff.", "say": "Our identification targets are the counterfactual distributions on the opposite side of the cutoff."}, {"show": "So, in the control region, we want to learn the distribution of Y<sub>1</sub>, and in the treated region, we want to learn the distribution of Y<sub>0</sub>.", "say": "So, in the control region, we want to learn the distribution of Y one, and in the treated region, we want to learn the distribution of Y zero."}]}, {"id": "S9", "num": "9", "title": "Smoothness Assumption", "paras": [{"show": "To learn about the unobserved counterfactual distributions, we impose the following assumption.", "say": "To learn about the unobserved counterfactual distributions, we impose the following assumption."}, {"show": "First, on the side where each potential outcome is observed, its distribution is identified from the data. This provides the starting point for extrapolation.", "say": "First, on the side where each potential outcome is observed, its distribution is identified from the data. This provides the starting point for extrapolation."}, {"show": "Second, our main assumption is smoothness.", "say": "Second, our main assumption is smoothness."}, {"show": "Take any two values in the support of the running variable. At every outcome threshold, the absolute difference between their conditional CDFs cannot exceed k<sub>d,c</sub> times the distance between those two values.", "say": "Take any two values in the support of the running variable. At every outcome threshold, the absolute difference between their conditional C-D-Fs cannot exceed k d c times the distance between those two values."}, {"show": "Here, k<sub>d,c</sub> is a sensitivity parameter that controls the strength of this assumption.", "say": "Here, k d c is a sensitivity parameter that controls the strength of this assumption."}]}, {"id": "S10", "num": "10", "title": "Interpreting the Smoothness Assumption", "paras": [{"show": "There are a few ways to interpret this assumption.", "say": "There are a few ways to interpret this assumption."}, {"show": "First, smoothness is imposed on the entire conditional distribution, rather than only on the conditional mean.", "say": "First, smoothness is imposed on the entire conditional distribution, rather than only on the conditional mean."}, {"show": "More precisely, when two values of the running variable are close, the sup distance between the two conditional distributions should also be small.", "say": "More precisely, when two values of the running variable are close, the soup distance between the two conditional distributions should also be small."}, {"show": "Second, k<sub>d,c</sub> determines the degree of smoothness.", "say": "Second, k d c determines the degree of smoothness."}, {"show": "A smaller value of k<sub>d,c</sub> requires greater similarity across the running variable, while a larger value allows greater differences.", "say": "A smaller value of k d c requires greater similarity across the running variable, while a larger value allows greater differences."}, {"show": "At the extreme, if k<sub>d,c</sub> = 0, the potential-outcome distribution does not vary with the running variable. In other words, Y<sub>d</sub> is independent of <i>R</i>.", "say": "At the extreme, if k d c equals zero, the potential-outcome distribution does not vary with the running variable. In other words, Y d is independent of R."}, {"show": "Therefore, if both k<sub>0,c</sub> and k<sub>1,c</sub> are zero, treatment effects for all subpopulations and for the overall population are the same as those at the cutoff.", "say": "Therefore, if both k zero c and k one c are zero, treatment effects for all subpopulations and for the overall population are the same as those at the cutoff."}]}, {"id": "S11", "num": "11", "title": "Bounds on Counterfactual Distributions", "paras": [{"show": "This is our main identification result.", "say": "This is our main identification result."}, {"show": "First, let r<sub>1</sub>* and r<sub>0</sub>* denote the boundary points closest to the cutoff in the treated and control regions, respectively. In the standard sharp RD setup, both are equal to the cutoff <i>c</i>.", "say": "First, let r one star and r zero star denote the boundary points closest to the cutoff in the treated and control regions, respectively. In the standard sharp R-D setup, both are equal to the cutoff c."}, {"show": "The key feature of the result is that the counterfactual distribution at a target value <i>r</i> can be bounded using only the distribution identified at the boundary point.", "say": "The key feature of the result is that the counterfactual distribution at a target value r can be bounded using only the distribution identified at the boundary point."}, {"show": "More specifically, starting from the boundary distribution, we construct the lower and upper bounds by subtracting and adding k<sub>d,c</sub> times the distance between the boundary point and the target point.", "say": "More specifically, starting from the boundary distribution, we construct the lower and upper bounds by subtracting and adding k d c times the distance between the boundary point and the target point."}, {"show": "Importantly, these pointwise bounds have a sharp interior.", "say": "Importantly, these pointwise bounds have a sharp interior."}]}, {"id": "S12", "num": "12", "title": "From Smoothness to Intersection Bounds", "paras": [{"show": "Let me explain why the bounds take this form.", "say": "Let me explain why the bounds take this form."}, {"show": "Suppose we want to identify the distribution of Y<sub>1</sub> at some point r<sub>0</sub> in the control region.", "say": "Suppose we want to identify the distribution of Y one at some point r zero in the control region."}, {"show": "Now take any point r̃ in the treated region. At this point, the distribution of Y<sub>1</sub> is identified from the data.", "say": "Now take any point r tilde in the treated region. At this point, the distribution of Y one is identified from the data."}, {"show": "Using the smoothness assumption, this observed distribution provides lower and upper bounds for the counterfactual distribution at r<sub>0</sub>.", "say": "Using the smoothness assumption, this observed distribution provides lower and upper bounds for the counterfactual distribution at r zero."}, {"show": "In the slide, the red term is the target we want to identify, and the blue terms are the bounds obtained from a given r̃.", "say": "In the slide, the red term is the target we want to identify, and the blue terms are the bounds obtained from a given r tilde."}, {"show": "Since each point in the treated region provides valid bounds, we take the supremum of the lower bounds and the infimum of the upper bounds to obtain the tightest bounds.", "say": "Since each point in the treated region provides valid bounds, we take the supremum of the lower bounds and the infimum of the upper bounds to obtain the tightest bounds."}]}, {"id": "S13", "num": "13", "title": "Extrapolation from the Boundary", "paras": [{"show": "In a sharp RD, these intersection bounds simplify further. This figure shows the intuition.", "say": "In a sharp R-D, these intersection bounds simplify further. This figure shows the intuition."}, {"show": "The control region lies to the left of the cutoff, while treated region lies to the right.", "say": "The control region lies to the left of the cutoff, while treated region lies to the right."}, {"show": "Here, r<sub>0</sub> is the target point where we want to extrapolate, and r<sub>1</sub>* is the boundary point of the treated region.", "say": "Here, r zero is the target point where we want to extrapolate, and r one star is the boundary point of the treated region."}, {"show": "The gray lines show the bounds obtained from different points r̃ in the treated region.", "say": "The gray lines show the bounds obtained from different points r tilde in the treated region."}, {"show": "In principle, we would search over all of these points and take the highest lower bound and the lowest upper bound. But in a sharp RD, both can be obtained using the boundary point r<sub>1</sub>* alone.", "say": "In principle, we would search over all of these points and take the highest lower bound and the lowest upper bound. But in a sharp R-D, both can be obtained using the boundary point r one star alone."}, {"show": "To see why, consider the lower bound. Moving from the boundary to an interior point may increase the CDF value. But the smoothness assumption limits this increase to k<sub>1,c</sub> times the distance between the boundary and the interior point. At the same time, moving to the interior point increases the distance from the target by exactly the same amount.", "say": "To see why, consider the lower bound. Moving from the boundary to an interior point may increase the C-D-F value. But the smoothness assumption limits this increase to k one c times the distance between the boundary and the interior point. At the same time, moving to the interior point increases the distance from the target by exactly the same amount."}, {"show": "Therefore, the additional gain in the CDF value cannot exceed the additional distance penalty. So an interior point cannot improve the lower bound. The same argument applies to the upper bound.", "say": "Therefore, the additional gain in the C-D-F value cannot exceed the additional distance penalty. So an interior point cannot improve the lower bound. The same argument applies to the upper bound."}, {"show": "As a result, the bounds depend only on the boundary distribution and the distance from the boundary to the target. This is what makes our bounds simple and tractable.", "say": "As a result, the bounds depend only on the boundary distribution and the distance from the boundary to the target. This is what makes our bounds simple and tractable."}]}, {"id": "S14", "num": "14", "title": "From Distribution Bounds to Causal Parameters", "paras": [{"show": "These distribution bounds allow us to study some causal parameters.", "say": "These distribution bounds allow us to study some causal parameters."}, {"show": "For a subpopulation with the running variable equal to r, we can invert the distribution bounds to obtain bounds on the conditional QTE. We can also obtain bounds on the conditional ATE.", "say": "For a subpopulation with the running variable equal to r, we can invert the distribution bounds to obtain bounds on the conditional Q-T-E. We can also obtain bounds on the conditional A-T-E."}, {"show": "For the overall population, we can similarly obtain bounds on the QTE and the ATE.", "say": "For the overall population, we can similarly obtain bounds on the Q-T-E and the A-T-E."}]}, {"id": "S15", "num": "15", "title": "Choosing k<sub>0,c</sub> and k<sub>1,c</sub>", "paras": [{"show": "An important issue is how to choose the smoothness parameters.", "say": "An important issue is how to choose the smoothness parameters."}, {"show": "Because the smoothness assumption is global, including the counterfactual region, k<sub>d,c</sub> cannot be determined from the observed data alone.", "say": "Because the smoothness assumption is global, including the counterfactual region, k d c cannot be determined from the observed data alone."}, {"show": "However, variation in the conditional CDF over the observed region can inform its choice.", "say": "However, variation in the conditional C-D-F over the observed region can inform its choice."}, {"show": "As a simple benchmark, we use the steepest change in the conditional CDF over this region.", "say": "As a simple benchmark, we use the steepest change in the conditional C-D-F over this region."}, {"show": "Researchers can then vary k<sub>0,c</sub> and k<sub>1,c</sub> around this benchmark to assess the sensitivity of the bounds.", "say": "Researchers can then vary k zero c and k one c around this benchmark to assess the sensitivity of the bounds."}]}, {"id": "S16", "num": "16", "title": "Stochastically Monotone Running Variable", "paras": [{"show": "So far, we have considered the baseline smoothness assumption.", "say": "So far, we have considered the baseline smoothness assumption."}, {"show": "We also consider an additional assumption, which we call the SMRV assumption.", "say": "We also consider an additional assumption, which we call the S-M-R-V assumption."}, {"show": "Under this assumption, higher values of the running variable are associated with higher potential outcomes. More precisely, the potential-outcome distributions are ordered by first-order stochastic dominance under either treatment status.", "say": "Under this assumption, higher values of the running variable are associated with higher potential outcomes. More precisely, the potential-outcome distributions are ordered by first-order stochastic dominance under either treatment status."}, {"show": "In the school example, this means that students with higher admission scores tend to have higher later exam scores, whether or not they are assigned to the better school.", "say": "In the school example, this means that students with higher admission scores tend to have higher later exam scores, whether or not they are assigned to the better school."}, {"show": "This assumption rules out some counterfactual distributions and further tightens the bounds.", "say": "This assumption rules out some counterfactual distributions and further tightens the bounds."}]}, {"id": "S17", "num": "17", "title": "Estimation", "paras": [{"show": "Let me briefly discuss estimation.", "say": "Let me briefly discuss estimation."}]}, {"id": "S18", "num": "18", "title": "Estimation of Bounds", "paras": [{"show": "We use distribution regression to estimate the conditional distributions of the potential outcomes over the observed regions, including at the boundary.", "say": "We use distribution regression to estimate the conditional distributions of the potential outcomes over the observed regions, including at the boundary."}, {"show": "Alternatively, nonparametric methods could be used.", "say": "Alternatively, nonparametric methods could be used."}]}, {"id": "S19", "num": "19", "title": "Empirical Application", "paras": [{"show": "Let me now turn to the empirical application.", "say": "Let me now turn to the empirical application."}]}, {"id": "S20", "num": "20", "title": "Empirical Setting", "paras": [{"show": "We revisit the Romanian high-school application of Pop-Eleches and Urquiola.", "say": "We revisit the Romanian high-school application of Pop Eh-leh-kess and Oor-kee-oh-la."}, {"show": "Students are assigned to high schools based on admission scores and ranked school choices, which generate school-specific cutoffs.", "say": "Students are assigned to high schools based on admission scores and ranked school choices, which generate school-specific cutoffs."}, {"show": "The treatment is assignment to a better school, and the main outcome is the Baccalaureate exam score, a national exam used for university admission.", "say": "The treatment is assignment to a better school, and the main outcome is the Baccalaureate exam score, a national exam used for university admission."}, {"show": "We use our framework to examine treatment effects away from the cutoff and for the overall population.", "say": "We use our framework to examine treatment effects away from the cutoff and for the overall population."}, {"show": "For the results I’ll show, we use the benchmark values k<sub>0,c</sub> = 0.26 and k<sub>1,c</sub> = 0.45.", "say": "For the results I'll show, we use the benchmark values k zero c equals 0.26 and k one c equals 0.45."}]}, {"id": "S21", "num": "21", "title": "CQTE, τ=0.2", "paras": [{"show": "Let me first show the CQTE at the 20th percentile.", "say": "Let me first show the C-Q-T-E at the 20th percentile."}, {"show": "The horizontal axis is the running variable, with the cutoff normalized to zero. The reference line shows the RD estimate at the cutoff.", "say": "The horizontal axis is the running variable, with the cutoff normalized to zero. The reference line shows the R-D estimate at the cutoff."}, {"show": "Our framework gives bounds on the CQTE at other values of the running variable. The dashed lines show the baseline bounds, while the solid lines show the bounds with the additional SMRV assumption.", "say": "Our framework gives bounds on the C-Q-T-E at other values of the running variable. The dashed lines show the baseline bounds, while the solid lines show the bounds with the additional S-M-R-V assumption."}, {"show": "There are two things to notice.", "say": "There are two things to notice."}, {"show": "First, SMRV substantially tightens the bounds, particularly the upper bound.", "say": "First, S-M-R-V substantially tightens the bounds, particularly the upper bound."}, {"show": "Second, for some subpopulations to the right of the cutoff, the lower bound lies above the RD estimate at the cutoff.", "say": "Second, for some subpopulations to the right of the cutoff, the lower bound lies above the R-D estimate at the cutoff."}, {"show": "Under our assumptions, these estimated bounds suggest that assignment to a better school raises the 20th percentile of exam scores more for these groups than for students at the cutoff.", "say": "Under our assumptions, these estimated bounds suggest that assignment to a better school raises the 20th percentile of exam scores more for these groups than for students at the cutoff."}]}, {"id": "S22", "num": "22", "title": "CQTE, τ=0.8", "paras": [{"show": "Now consider the 80th percentile.", "say": "Now consider the 80th percentile."}, {"show": "Here, the pattern is different. The bounds generally include the RD estimate at the cutoff.", "say": "Here, the pattern is different. The bounds generally include the R-D estimate at the cutoff."}, {"show": "So, at this quantile, we do not see the same pattern as before.", "say": "So, at this quantile, we do not see the same pattern as before."}]}, {"id": "S23", "num": "23", "title": "QTE for the Overall Population", "paras": [{"show": "So far, we have looked at subpopulations indexed by the running variable. Now let me turn to the QTE for the overall population.", "say": "So far, we have looked at subpopulations indexed by the running variable. Now let me turn to the Q-T-E for the overall population."}, {"show": "The first column reports the RD estimate at the cutoff, and the next two columns show the QTE bounds under the baseline smoothness assumption and the additional SMRV assumption.", "say": "The first column reports the R-D estimate at the cutoff, and the next two columns show the Q-T-E bounds under the baseline smoothness assumption and the additional S-M-R-V assumption."}, {"show": "For quantiles from 0.4 to 0.7, the lower bound lies above the RD estimate at the cutoff.", "say": "For quantiles from 0.4 to 0.7, the lower bound lies above the R-D estimate at the cutoff."}, {"show": "This suggests that, at these quantiles, the QTE for the overall population may differ from the cutoff effect.", "say": "This suggests that, at these quantiles, the Q-T-E for the overall population may differ from the cutoff effect."}]}, {"id": "S24", "num": "24", "title": "CATE and ATE", "paras": [{"show": "Let me compare these results with the mean effects.", "say": "Let me compare these results with the mean effects."}, {"show": "When the running variable equals zero, the CATE is the cutoff effect.", "say": "When the running variable equals zero, the C-eh-T-E is the cutoff effect."}, {"show": "For the other values of the running variable shown here, the CATE bounds include the cutoff effect, and the ATE bounds do as well.", "say": "For the other values of the running variable shown here, the C-eh-T-E bounds include the cutoff effect, and the A-T-E bounds do as well."}, {"show": "So, for the mean effects, we do not see the same pattern as for some of the quantile effects.", "say": "So, for the mean effects, we do not see the same pattern as for some of the quantile effects."}]}, {"id": "S25", "num": "25", "title": "Breakdown Frontier", "paras": [{"show": "So far, I have shown results using our benchmark smoothness parameters. Now let me show how sensitive the conclusion about the ATE is to those parameters.", "say": "So far, I have shown results using our benchmark smoothness parameters. Now let me show how sensitive the conclusion about the A-T-E is to those parameters."}, {"show": "The substantive conclusion here is that the ATE is nonnegative.", "say": "The substantive conclusion here is that the A-T-E is nonnegative."}, {"show": "The horizontal and vertical axes are the two smoothness parameters. Larger values correspond to weaker smoothness restrictions.", "say": "The horizontal and vertical axes are the two smoothness parameters. Larger values correspond to weaker smoothness restrictions."}, {"show": "The black line is the breakdown frontier: below the frontier, the lower bound on the ATE remains nonnegative, while beyond the frontier this conclusion can no longer be guaranteed.", "say": "The black line is the breakdown frontier: below the frontier, the lower bound on the A-T-E remains nonnegative, while beyond the frontier this conclusion can no longer be guaranteed."}, {"show": "The frontier also shows the tradeoff between the two smoothness parameters. We can allow weaker smoothness for one potential outcome only if we impose stronger smoothness on the other.", "say": "The frontier also shows the tradeoff between the two smoothness parameters. We can allow weaker smoothness for one potential outcome only if we impose stronger smoothness on the other."}]}, {"id": "S26", "num": "26", "title": "Conclusions", "paras": []}, {"id": "S27", "num": "27", "title": "Conclusions", "paras": [{"show": "To conclude, we develop a framework for extrapolating treatment effects beyond the cutoff in sharp RD designs under a smoothness assumption.", "say": "To conclude, we develop a framework for extrapolating treatment effects beyond the cutoff in sharp R-D designs under a smoothness assumption."}, {"show": "We derive sharp and tractable bounds on counterfactual distributions, which allow us to study both distributional and mean treatment effects.", "say": "We derive sharp and tractable bounds on counterfactual distributions, which allow us to study both distributional and mean treatment effects."}, {"show": "In the application, treatment effects away from the cutoff and for the overall population may differ from the cutoff effect, particularly for distributional effects.", "say": "In the application, treatment effects away from the cutoff and for the overall population may differ from the cutoff effect, particularly for distributional effects."}, {"show": "Thank you very much.", "say": "Thank you very much."}]}, {"id": "S28", "num": "28", "title": "Thank You", "paras": []}, {"id": "QA", "num": "Q&A", "title": "Appendix — CQTE, τ=0.5", "paras": [{"show": "At the median, we see a pattern similar to the lower quantile.", "say": "At the median, we see a pattern similar to the lower quantile."}, {"show": "For some subpopulations to the right of the cutoff, the lower bound exceeds the CQTE estimate at the cutoff.", "say": "For some subpopulations to the right of the cutoff, the lower bound exceeds the C-Q-T-E estimate at the cutoff."}, {"show": "So the evidence of heterogeneity is not limited to the 20th percentile.", "say": "So the evidence of heterogeneity is not limited to the 20th percentile."}]}];
+const TIM = [{"id": "S1", "dur": 13.604, "marks": [0.25, 6.069]}, {"id": "S2", "dur": 36.805, "marks": [0.25, 8.373, 16.198, 30.487]}, {"id": "S3", "dur": 49.665, "marks": [0.25, 5.728, 14.513, 29.804, 35.538]}, {"id": "S4", "dur": 51.089, "marks": [0.25, 9.013, 20.827, 25.772, 38.333, 44.685]}, {"id": "S5", "dur": 26.869, "marks": [0.25, 9.163, 15.622]}, {"id": "S6", "dur": 3.987, "marks": [0.25]}, {"id": "S7", "dur": 4.307, "marks": [0.25]}, {"id": "S8", "dur": 53.773, "marks": [0.25, 4.149, 7.558, 13.676, 21.202, 36.024, 43.401]}, {"id": "S9", "dur": 43.585, "marks": [0.25, 6.923, 18.395, 21.313, 36.669]}, {"id": "S10", "dur": 60.45, "marks": [0.25, 3.595, 11.505, 21.463, 25.49, 35.448, 48.051]}, {"id": "S11", "dur": 48.065, "marks": [0.25, 3.637, 18.993, 30.657, 43.453]}, {"id": "S12", "dur": 51.431, "marks": [0.25, 3.936, 11.889, 21.036, 30.823, 39.715]}, {"id": "S13", "dur": 91.571, "marks": [0.25, 7.179, 13.446, 22.231, 28.455, 42.339, 66.142, 80.089]}, {"id": "S14", "dur": 26.25, "marks": [0.25, 5.344, 19.099]}, {"id": "S15", "dur": 37.675, "marks": [0.25, 4.64, 14.747, 21.825, 28.605]}, {"id": "S16", "dur": 44.459, "marks": [0.25, 4.448, 10.438, 26.945, 37.863]}, {"id": "S17", "dur": 3.475, "marks": [0.25]}, {"id": "S18", "dur": 15.375, "marks": [0.25, 10.869]}, {"id": "S19", "dur": 3.945, "marks": [0.25]}, {"id": "S20", "dur": 44.075, "marks": [0.25, 6.624, 15.302, 26.007, 32.914]}, {"id": "S21", "dur": 58.679, "marks": [0.25, 4.683, 14.747, 28.844, 31.165, 37.048, 45.193]}, {"id": "S22", "dur": 14.517, "marks": [0.25, 3.04, 9.499]}, {"id": "S23", "dur": 39.173, "marks": [0.25, 9.589, 22.299, 30.828]}, {"id": "S24", "dur": 25.52, "marks": [0.25, 3.723, 9.286, 18.924]}, {"id": "S25", "dur": 51.307, "marks": [0.25, 11.445, 16.561, 25.857, 38.781]}, {"id": "S27", "dur": 34.395, "marks": [0.25, 10.528, 20.806, 32.129]}, {"id": "QA", "dur": 18.293, "marks": [0.25, 4.619, 12.379]}];
+const AUD = {};
+const srcOf = id => AUD[id] || (id + '.mp3');
+TIM.forEach(t => fetch(t.id + '.mp3').then(r => r.blob()).then(b => { AUD[t.id] = URL.createObjectURL(new Blob([b], { type: 'audio/mpeg' })); }).catch(() => {}));
+const tmap = Object.fromEntries(TIM.map(t => [t.id, t]));
+const playable = SECS.filter(s => tmap[s.id]);
+let offs = [], acc = 0;
+playable.forEach(s => { offs.push(acc); acc += tmap[s.id].dur; });
+const TOTAL = acc;
+const fmt = x => { x = Math.max(0, Math.floor(x)); return Math.floor(x/60) + ':' + String(x%60).padStart(2,'0'); };
+document.getElementById('tot').textContent = fmt(TOTAL);
 
-let state = { vocab:{gre:[],toefl:[],writing:[]}, vday:1 };
-try { const s = JSON.parse(localStorage.getItem(LS_KEY)); if (s && s.vocab) state = Object.assign(state, s); } catch(e){}
-function save(){ try { localStorage.setItem(LS_KEY, JSON.stringify(state)); return true; } catch(e){ return false; } }
-
-let vcat="gre", quiz=null, vedit=null, vsel=new Set(), vsort="new", vfilter=0, qmode="mc";
-
-function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
-function csvEscape(x){ return '"' + String(x==null?"":x).replace(/"/g,'""') + '"'; }
-function parseCSV(text){
-  const rows=[]; let row=[], cell="", inQ=false;
-  text = text.replace(/^﻿/,"");
-  for (let i=0;i<text.length;i++){ const c=text[i];
-    if (inQ){ if (c==='"'){ if (text[i+1]==='"'){ cell+='"'; i++; } else inQ=false; } else cell+=c; }
-    else if (c==='"') inQ=true;
-    else if (c===",") { row.push(cell); cell=""; }
-    else if (c==="\n"||c==="\r"){ if (c==="\r"&&text[i+1]==="\n") i++;
-      row.push(cell); cell=""; if (row.some(x=>x.trim()!=="")) rows.push(row); row=[]; }
-    else cell+=c; }
-  row.push(cell); if (row.some(x=>x.trim()!=="")) rows.push(row);
-  return rows;
-}
-function importRows(rows, cat){
-  const h0=(rows[0] && rows[0][0]||"").toLowerCase().trim();
-  if (h0==="day"||h0==="일차"||h0==="word"||h0==="단어"||h0==="voca") rows=rows.slice(1);
-  const existing={};
-  state.vocab[cat].forEach(x=>{ existing[x.w.toLowerCase().trim()]=true; });
-  let n=0;
-  rows.forEach(row=>{
-    let d=1, off=0;
-    if (/^\s*\d+\s*$/.test(row[0]||"")){ d=parseInt(row[0]); off=1; }
-    const w=(row[off]||"").trim();
-    if (!w||existing[w.toLowerCase()]) return;
-    existing[w.toLowerCase()]=true;
-    state.vocab[cat].push({ d:d, w:w, m:(row[off+1]||"").trim(), ex:(row[off+2]||"").trim(), ext:(row[off+3]||"").trim(), wrong:parseInt(row[off+4])||0 });
-    n++;
+const main = document.getElementById('script'), strip = document.getElementById('strip');
+SECS.forEach(s => {
+  const sec = document.createElement('section'); sec.id = 'sec-' + s.id;
+  const t = tmap[s.id];
+  sec.innerHTML = `<div class="sh"><span class="sn">${s.num === 'Q&A' ? 'Q&amp;A' : 'SLIDE ' + s.num}</span><span class="st">${s.title}</span><span class="sd">${t ? fmt(t.dur) : ''}</span></div>`;
+  if (!s.paras.length) sec.insertAdjacentHTML('beforeend', '<p class="silent">(대본 없음 · 넘어감)</p>');
+  s.paras.forEach((p, i) => {
+    const el = document.createElement('p'); el.innerHTML = p.show; el.tabIndex = 0;
+    el.dataset.s = s.id; el.dataset.i = i;
+    el.onclick = () => t && jump(playable.findIndex(x => x.id === s.id), t.marks[i]);
+    sec.appendChild(el);
   });
-  return n;
-}
-async function syncFromRepo(){
-  let added=0, ok=0;
-  for (const f of SYNC_FILES){
-    try {
-      const r = await fetch(f, {cache:"no-store"});
-      if (!r.ok) continue;
-      const text = await r.text();
-      if (text.trim().startsWith("<")) continue; // 404 페이지 방어
-      const fl = f.toLowerCase();
-      const cat = fl.indexOf("gre")>=0?"gre":fl.indexOf("toefl")>=0?"toefl":fl.indexOf("writing")>=0?"writing":vcat;
-      const rows = parseCSV(text);
-      if (rows.length){ added += importRows(rows, cat); ok++; }
-    } catch(e){}
+  sec.querySelector('.sh').onclick = () => t && jump(playable.findIndex(x => x.id === s.id), 0);
+  main.appendChild(sec);
+  if (t) {
+    const c = document.createElement('button'); c.className = 'chip'; c.id = 'chip-' + s.id;
+    c.textContent = s.num; c.onclick = () => jump(playable.findIndex(x => x.id === s.id), 0);
+    strip.appendChild(c);
   }
-  if (ok){ save();
-    document.getElementById("syncMsg").textContent = added ? "· 동기화 +" + added + "단어" : "· 동기화됨";
-    render(); }
+});
+
+const au = document.getElementById('au');
+const playBtn = document.getElementById('play');
+let idx = 0, wantPlay = false, lastP = null;
+const speeds = [0.85, 1, 1.1, 1.2, 1.3]; let si = 1;
+au.preservesPitch = true;
+
+function load(i, t) {
+  idx = i;
+  const id = playable[i].id;
+  if (au.dataset.id !== id) { au.dataset.id = id; au.src = srcOf(id); }
+  const go = () => { au.currentTime = t || 0; au.playbackRate = speeds[si]; if (wantPlay) au.play().catch(()=>{}); };
+  if (au.readyState >= 1 && au.dataset.id === id) go(); else au.addEventListener('loadedmetadata', go, { once: true });
+  document.querySelectorAll('.chip').forEach((c, k) => { c.classList.toggle('on', k === i); c.classList.toggle('done', k < i); });
+  const ch = document.getElementById('chip-' + id); ch && ch.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  tick();
 }
+function jump(i, t) { if (i < 0) return; wantPlay = true; setBtn(); load(i, t); }
+function setBtn() { playBtn.textContent = wantPlay ? '❚❚' : '▶'; playBtn.setAttribute('aria-label', wantPlay ? '일시정지' : '재생'); }
+playBtn.onclick = () => {
+  wantPlay = !wantPlay; setBtn();
+  if (wantPlay) { if (!au.src) load(idx, 0); else au.play().catch(()=>{}); } else au.pause();
+};
+document.getElementById('prev').onclick = () => jump(au.currentTime > 2 ? idx : Math.max(0, idx - 1), 0);
+document.getElementById('next').onclick = () => idx < playable.length - 1 && jump(idx + 1, 0);
+document.getElementById('speed').onclick = e => { si = (si + 1) % speeds.length; au.playbackRate = speeds[si]; e.target.textContent = speeds[si].toFixed(speeds[si] === 1 ? 1 : 2).replace(/0$/, '') + '×'; };
+au.addEventListener('ended', () => { if (idx < playable.length - 1) load(idx + 1, 0); else { wantPlay = false; setBtn(); } });
 
-function buildQuizChoices(it){
-  const key = quiz.mode==="mc"?"m":"w";
-  const correct = it[key];
-  let pool = Array.from(new Set(state.vocab[vcat].map(x=>x[key]).filter(v=>v&&v!==correct)));
-  for (let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=pool[i];pool[i]=pool[j];pool[j]=t; }
-  const ch=[correct].concat(pool.slice(0,3));
-  for (let i=ch.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=ch[i];ch[i]=ch[j];ch[j]=t; }
-  quiz.choices=ch; quiz.answer=ch.indexOf(correct);
-}
-function getVList(){
-  const words=state.vocab[vcat];
-  let list=words.map((it,idx)=>({it:it,idx:idx}));
-  if (vfilter>0) list=list.filter(p=>(p.it.d||1)===vfilter);
-  if (vsort==="new") list.reverse();
-  else if (vsort==="dayasc") list.sort((a,b)=>(a.it.d||1)-(b.it.d||1));
-  else if (vsort==="daydesc") list.sort((a,b)=>(b.it.d||1)-(a.it.d||1));
-  else if (vsort==="abc") list.sort((a,b)=>a.it.w.localeCompare(b.it.w,"en",{sensitivity:"base"}));
-  else if (vsort==="wrong") list.sort((a,b)=>(b.it.wrong||0)-(a.it.wrong||0));
-  return list;
-}
-
-function render(){
-  const seg=document.getElementById("seg");
-  seg.innerHTML="";
-  VCATS.forEach(c=>{
-    const b=document.createElement("button");
-    b.className="btn segbtn"+(vcat===c[0]?" on":"");
-    b.textContent=c[1]+" ("+state.vocab[c[0]].length+")";
-    b.onclick=()=>{ vcat=c[0]; quiz=null; vedit=null; vsel=new Set(); vfilter=0; render(); };
-    seg.appendChild(b);
-  });
-
-  const main=document.getElementById("main");
-  const words=state.vocab[vcat];
-  let h="";
-
-  if (quiz){
-    if (quiz.i>=quiz.order.length){
-      h+='<div class="quiz"><h3>결과</h3><p style="font-size:18px"><b>'+quiz.right+' / '+quiz.order.length+'</b> 맞음</p>';
-      if (quiz.wrong.length){
-        h+='<p style="margin:4px 0"><b>틀린 단어:</b></p>';
-        quiz.wrong.forEach(i=>{ const it=words[i];
-          if (it) h+='<div class="ventry"><div class="vtop"><b>'+esc(it.w)+'</b><span class="vm">'+esc(it.m)+'</span></div></div>'; });
-      }
-      h+='<button class="btn" id="qdone" style="margin-top:10px">닫기</button></div>';
-    } else {
-      const it=words[quiz.order[quiz.i]];
-      h+='<div class="quiz"><h3>테스트 '+(quiz.i+1)+' / '+quiz.order.length+
-        ' <span class="cnt">('+quiz.from+'~'+quiz.to+'일차)</span>'+
-        '<button class="btn vsm" id="qquit" style="margin-left:auto">그만</button></h3>';
-      if (quiz.mode==="flash"){
-        h+='<div class="qword">'+esc(it.w)+' <span class="vdaytag">'+(it.d||1)+'일차</span></div>';
-        if (quiz.show){
-          h+='<div class="qmean">'+esc(it.m)+'</div>'+
-            (it.ex?'<div class="qex">'+esc(it.ex)+(it.ext?'<br>'+esc(it.ext):"")+'</div>':"")+
-            '<button class="btn" id="qo">알았음 O</button> <button class="btn danger" id="qx">몰랐음 X</button>';
-        } else h+='<button class="btn" id="qshow">뜻 보기</button>';
-      } else {
-        if (!quiz.choices) buildQuizChoices(it);
-        const prompt = quiz.mode==="mc"?it.w:it.m;
-        h+='<div class="qword" style="font-size:'+(quiz.mode==="mc"?"26px":"18px")+'">'+esc(prompt)+' <span class="vdaytag">'+(it.d||1)+'일차</span></div>';
-        quiz.choices.forEach((c,ci)=>{
-          let cls="btn qopt";
-          if (quiz.picked!==null){ if (ci===quiz.answer) cls+=" correct"; else if (ci===quiz.picked) cls+=" wrongpick"; }
-          h+='<button class="'+cls+'" data-ci="'+ci+'">'+(ci+1)+'. '+esc(c)+'</button>';
-        });
-        if (quiz.picked!==null){
-          h+='<div class="qmean" style="margin-top:10px">'+(quiz.picked===quiz.answer?"⭕ 정답":"❌ 오답")+'</div>'+
-            (it.ex?'<div class="qex">'+esc(it.ex)+(it.ext?'<br>'+esc(it.ext):"")+'</div>':"")+
-            '<button class="btn" id="qnext">다음 →</button>';
-        }
-      }
-      h+='</div>';
+function tick() {
+  const s = playable[idx], t = tmap[s.id], ct = au.currentTime || 0;
+  let pi = 0; t.marks.forEach((m, k) => { if (ct >= m - 0.05) pi = k; });
+  const el = document.querySelector(`p[data-s="${s.id}"][data-i="${pi}"]`);
+  if (el !== lastP) {
+    lastP && lastP.classList.remove('now'); el && el.classList.add('now'); lastP = el;
+    if (el && wantPlay) {
+      const r = el.getBoundingClientRect(), top = document.querySelector('header').getBoundingClientRect().bottom;
+      if (r.top < top + 10 || r.bottom > innerHeight - 140) window.scrollBy({ top: r.top - top - 40, behavior: 'smooth' });
     }
-    main.innerHTML=h; bindQuiz(); return;
   }
+  const g = offs[idx] + ct;
+  document.getElementById('fill').style.width = (100 * g / TOTAL) + '%';
+  document.getElementById('tm').textContent = fmt(g) + ' / ' + fmt(TOTAL);
+}
+au.addEventListener('timeupdate', tick);
+document.getElementById('prog').onclick = e => {
+  const r = e.currentTarget.getBoundingClientRect(), g = TOTAL * (e.clientX - r.left) / r.width;
+  let i = 0; while (i < offs.length - 1 && offs[i + 1] <= g) i++;
+  jump(i, g - offs[i]);
+};
+load(0, 0);
 
-  // 테스트 설정
-  const days=words.map(it=>it.d||1);
-  const minD=days.length?Math.min.apply(null,days):1;
-  const maxD=days.length?Math.max.apply(null,days):1;
-  h+='<div style="margin-bottom:16px"><h3>테스트</h3><div class="vrow" style="align-items:center">'+
-    '<span style="flex:0 0 auto;font-size:13px">일차</span>'+
-    '<input id="qfrom" class="vnum" type="number" min="1" value="'+minD+'">'+
-    '<span style="flex:0 0 auto">~</span>'+
-    '<input id="qto" class="vnum" type="number" min="1" value="'+maxD+'">'+
-    '<select id="qmode" class="vsortsel">'+
-    '<option value="mc"'+(qmode==="mc"?" selected":"")+'>뜻 고르기</option>'+
-    '<option value="mcr"'+(qmode==="mcr"?" selected":"")+'>단어 고르기</option>'+
-    '<option value="flash"'+(qmode==="flash"?" selected":"")+'>플래시카드</option>'+
-    '</select>'+
-    '<button class="btn" id="vtest"'+(words.length?"":" disabled")+' style="flex:1">테스트 시작</button></div></div>';
+/* ================= memorize ================= */
+const MEM = playable.filter(s => s.paras.length); // slides that have script text
+const LV = [
+  { k: '전문', d: '읽으며 따라 말하기' },
+  { k: '첫 글자', d: '단어 첫 글자만' },
+  { k: '첫 마디', d: '문단 첫 세 단어' },
+];
+const store = (() => {
+  let m = {};
+  try { m = JSON.parse(localStorage.getItem('rdd-mem-v1') || '{}') || {}; } catch (e) {}
+  return {
+    get: id => m[id] || 0,
+    set: (id, v) => { m[id] = v; try { localStorage.setItem('rdd-mem-v1', JSON.stringify(m)); } catch (e) {} },
+  };
+})();
+let mi = 0, lv = 0;
 
-  // 단어 추가
-  h+='<div style="margin-bottom:16px"><h3>단어 추가</h3><div class="vrow">'+
-    '<input id="vd" class="vnum" type="number" min="1" placeholder="일차" value="'+(state.vday||1)+'">'+
-    '<input id="vw" placeholder="단어"><input id="vm" placeholder="뜻">'+
-    '<button class="btn" id="vadd">추가</button></div>'+
-    '<input id="vex" class="vlong" placeholder="예문 (선택)">'+
-    '<input id="vext" class="vlong" placeholder="예문 해석 (선택)"></div>';
-
-  // CSV
-  h+='<div style="margin-bottom:16px"><div class="vrow">'+
-    '<button class="btn" id="vcsv"'+(words.length?"":" disabled")+'>CSV 내보내기</button>'+
-    '<label class="btn">CSV 불러오기<input type="file" id="vimp" accept=".csv" hidden></label></div></div>';
-
-  // 단어장
-  const list=getVList();
-  const uniqDays=Array.from(new Set(words.map(it=>it.d||1))).sort((a,b)=>a-b);
-  h+='<div><h3>단어장 <span class="cnt">'+(vfilter>0?list.length+"/"+words.length:words.length)+'</span></h3>';
-  if (!words.length) h+='<div class="empty">아직 없음. 위에서 추가하거나 CSV를 불러올 것.</div>';
-  else {
-    h+='<div class="vrow" style="margin-bottom:8px">'+
-      '<select id="vfilter" class="vsortsel"><option value="0"'+(vfilter===0?" selected":"")+'>전체 보기</option>';
-    uniqDays.forEach(dd=>{ h+='<option value="'+dd+'"'+(vfilter===dd?" selected":"")+'>'+dd+'일차만</option>'; });
-    h+='</select><select id="vsort" class="vsortsel">'+
-      '<option value="new"'+(vsort==="new"?" selected":"")+'>최신순</option>'+
-      '<option value="dayasc"'+(vsort==="dayasc"?" selected":"")+'>일차 ↑</option>'+
-      '<option value="daydesc"'+(vsort==="daydesc"?" selected":"")+'>일차 ↓</option>'+
-      '<option value="abc"'+(vsort==="abc"?" selected":"")+'>ABC순</option>'+
-      '<option value="wrong"'+(vsort==="wrong"?" selected":"")+'>많이 틀린 순</option>'+
-      '</select>'+
-      '<button class="btn vsm" id="vselall">'+(list.length&&vsel.size===list.length?"전체해제":"전체선택")+'</button>'+
-      '<button class="btn vsm danger" id="vdelsel"'+(vsel.size?"":" disabled")+'>선택 삭제 ('+vsel.size+')</button></div>';
-    if (vfilter>0&&!list.length) h+='<div class="empty">'+vfilter+'일차 단어가 없음.</div>';
-  }
-  list.forEach(pair=>{
-    const it=pair.it, idx=pair.idx;
-    if (vedit===idx){
-      h+='<div class="ventry" style="background:#faf9f5;border-radius:10px"><div class="vrow">'+
-        '<input id="ved" class="vnum" type="number" min="1" value="'+(it.d||1)+'">'+
-        '<input id="vew" value="'+esc(it.w)+'" placeholder="단어"><input id="vem" value="'+esc(it.m)+'" placeholder="뜻"></div>'+
-        '<input id="veex" class="vlong" value="'+esc(it.ex||"")+'" placeholder="예문">'+
-        '<input id="veext" class="vlong" value="'+esc(it.ext||"")+'" placeholder="예문 해석">'+
-        '<div class="vrow" style="margin-top:6px"><button class="btn vsm" id="vesave">저장</button>'+
-        '<button class="btn vsm" id="vecancel">취소</button></div></div>';
-    } else {
-      h+='<div class="ventry"><div class="vtop">'+
-        '<input type="checkbox" class="vselbox" data-i="'+idx+'"'+(vsel.has(idx)?" checked":"")+'>'+
-        '<span class="vdaytag">'+(it.d||1)+'일차</span><b>'+esc(it.w)+'</b><span class="vm">'+esc(it.m)+'</span>'+
-        (it.wrong?'<span class="vwrong">×'+it.wrong+'</span>':"")+
-        '<button class="btn vsm vedit2" data-i="'+idx+'">수정</button>'+
-        '<button class="btn vsm vdel" data-i="'+idx+'">삭제</button></div>'+
-        (it.ex?'<div class="vex">'+esc(it.ex)+(it.ext?'<br>'+esc(it.ext):"")+'</div>':"")+
-        '</div>';
-    }
-  });
-  h+='</div>';
-  main.innerHTML=h;
-  bindMain();
+// level 1 rendering: keep first letter of each word, hide the rest (tap to reveal)
+function initials(html) {
+  return html.split(/\s+/).map(tok => {
+    if (tok.includes('<')) return tok; // math notation stays visible
+    const m = tok.match(/^([^A-Za-z0-9]*)([A-Za-z0-9])([A-Za-z0-9'’\-]*)(.*)$/);
+    if (!m || !m[3]) return tok;
+    const w = Math.min(4, 0.42 * m[3].length).toFixed(2);
+    return `<span class="w">${m[1]}${m[2]}<span class="rest">${m[3]}</span><span class="gap" style="width:${w}em"></span>${m[4]}</span>`;
+  }).join(' ');
+}
+const plain = h => h.replace(/<[^>]+>/g, '');
+function firstWords(html, n) {
+  const toks = html.split(/\s+/);
+  return toks.slice(0, n).join(' ') + (toks.length > n ? ' <span class="cue">…</span>' : '');
 }
 
-function bindQuiz(){
-  const main=document.getElementById("main");
-  const words=state.vocab[vcat];
-  const q=id=>main.querySelector(id);
-  main.querySelectorAll(".qopt").forEach(b=>{
-    b.onclick=()=>{
-      if (quiz.picked!==null) return;
-      quiz.picked=+b.dataset.ci;
-      const idx=quiz.order[quiz.i];
-      if (quiz.picked===quiz.answer) quiz.right++;
-      else { words[idx].wrong=(words[idx].wrong||0)+1; quiz.wrong.push(idx); save(); }
-      render();
-    };
+function renderStrip() {
+  const ms = document.getElementById('mstrip'); ms.innerHTML = '';
+  MEM.forEach((s, k) => {
+    const b = document.createElement('button');
+    b.className = 'chip mchip' + (k === mi ? ' on' : '');
+    const v = store.get(s.id);
+    b.innerHTML = `<span>${s.num}</span><span class="dots">${[1,2,3].map(x => `<i class="${x <= v ? 'f' : ''}"></i>`).join('')}</span>`;
+    b.setAttribute('aria-label', `Slide ${s.num}, ${v}단계 완료`);
+    b.onclick = () => { mi = k; lv = Math.min(store.get(MEM[k].id), 2); renderMem(); };
+    ms.appendChild(b);
   });
-  if (q("#qnext")) q("#qnext").onclick=()=>{ quiz.i++; quiz.choices=null; quiz.picked=null; render(); };
-  if (q("#qshow")) q("#qshow").onclick=()=>{ quiz.show=true; render(); };
-  if (q("#qo")) q("#qo").onclick=()=>{ quiz.right++; quiz.i++; quiz.show=false; render(); };
-  if (q("#qx")) q("#qx").onclick=()=>{
-    const idx=quiz.order[quiz.i];
-    words[idx].wrong=(words[idx].wrong||0)+1;
-    quiz.wrong.push(idx); quiz.i++; quiz.show=false; save(); render();
-  };
-  if (q("#qquit")) q("#qquit").onclick=()=>{ quiz=null; render(); };
-  if (q("#qdone")) q("#qdone").onclick=()=>{ quiz=null; render(); };
+  const on = ms.children[mi]; on && on.scrollIntoView({ inline: 'center', block: 'nearest' });
 }
 
-function bindMain(){
-  const main=document.getElementById("main");
-  const words=state.vocab[vcat];
-  const q=id=>main.querySelector(id);
-
-  if (q("#qmode")) q("#qmode").onchange=e=>{ qmode=e.target.value; };
-  if (q("#vtest")) q("#vtest").onclick=()=>{
-    const from=Math.max(1,parseInt(q("#qfrom").value)||1);
-    const to=Math.max(from,parseInt(q("#qto").value)||from);
-    const order=[];
-    words.forEach((it,i)=>{ const dd=it.d||1; if (dd>=from&&dd<=to) order.push(i); });
-    if (!order.length){ alert(from+"~"+to+"일차 단어가 없음."); return; }
-    if (qmode!=="flash"){
-      const key=qmode==="mc"?"m":"w";
-      if (new Set(words.map(x=>x[key]).filter(Boolean)).size<4){ alert("4지선다는 단어가 4개 이상 필요함."); return; }
-    }
-    for (let i=order.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=order[i];order[i]=order[j];order[j]=t; }
-    quiz={ mode:qmode, order:order, i:0, show:false, right:0, wrong:[], from:from, to:to, choices:null, picked:null };
-    render();
-  };
-
-  if (q("#vadd")){
-    const add=()=>{
-      const dnum=Math.max(1,parseInt(q("#vd").value)||1);
-      const w=q("#vw").value.trim(), m=q("#vm").value.trim();
-      const ex=q("#vex").value.trim(), ext=q("#vext").value.trim();
-      if (!w) return;
-      state.vocab[vcat].push({d:dnum,w:w,m:m,ex:ex,ext:ext,wrong:0});
-      state.vday=dnum; save(); render();
-      setTimeout(()=>{ const el=document.querySelector("#vw"); if (el) el.focus(); },0);
-    };
-    q("#vadd").onclick=add;
-    ["vd","vw","vm","vex","vext"].forEach(id=>{
-      q("#"+id).onkeydown=e=>{
-        if (e.key!=="Enter") return;
-        if (id==="vd") q("#vw").focus();
-        else if (id==="vw") q("#vm").focus();
-        else add();
-      };
-    });
-  }
-
-  if (q("#vcsv")) q("#vcsv").onclick=()=>{
-    const rows=[["day","word","meaning","example","example_translation","wrong_count"]];
-    words.forEach(it=>rows.push([it.d||1,it.w,it.m,it.ex||"",it.ext||"",it.wrong||0]));
-    const csv="﻿"+rows.map(r=>r.map(csvEscape).join(",")).join("\r\n");
-    const a=document.createElement("a");
-    a.href="data:text/csv;charset=utf-8,"+encodeURIComponent(csv);
-    a.download="voca_"+vcat+".csv"; a.click();
-  };
-  if (q("#vimp")) q("#vimp").onchange=e=>{
-    const file=e.target.files[0]; if (!file) return;
-    const r=new FileReader();
-    r.onload=()=>{
-      const rows=parseCSV(r.result);
-      if (!rows.length){ alert("빈 파일임."); return; }
-      const n=importRows(rows,vcat);
-      save(); render();
-      alert(n+"개 추가함 (중복 제외).");
-    };
-    r.readAsText(file);
-  };
-
-  if (q("#vsort")) q("#vsort").onchange=e=>{ vsort=e.target.value; render(); };
-  if (q("#vfilter")) q("#vfilter").onchange=e=>{ vfilter=parseInt(e.target.value)||0; vsel=new Set(); render(); };
-  main.querySelectorAll(".vselbox").forEach(cb=>{
-    cb.onchange=()=>{ const i=+cb.dataset.i; if (cb.checked) vsel.add(i); else vsel.delete(i); render(); };
+function renderMem() {
+  stopPara();
+  const s = MEM[mi], t = tmap[s.id], done = store.get(s.id);
+  const c = document.getElementById('mcard');
+  let h = `<div class="ch"><span class="sn">${s.num === 'Q&A' ? 'Q&amp;A' : 'SLIDE ' + s.num}</span><span class="st">${s.title}</span><span class="sd">${fmt(t.dur)}</span></div>`;
+  h += `<div class="lv">${LV.map((L, k) => `<button class="lvb${k === lv ? ' on' : ''}${k < done ? ' ok' : ''}" data-l="${k}">${L.k}<small>${k < done ? '✓ 완료' : L.d}</small></button>`).join('')}</div>`;
+  s.paras.forEach((p, i) => {
+    let body;
+    if (lv === 0) body = p.show;
+    else if (lv === 1) body = initials(p.show);
+    else if (lv === 2) body = firstWords(p.show, 3);
+    else body = `<span class="blank">문단 ${i + 1} · ${plain(p.show).split(/\s+/).length}단어</span>`;
+    h += `<div class="mp"><button class="pb" data-i="${i}" aria-label="문단 ${i + 1} 듣기">▶</button><div class="mt" data-i="${i}" tabindex="0">${body}</div></div>`;
   });
-  if (q("#vselall")) q("#vselall").onclick=()=>{
-    const vis=getVList().map(p=>p.idx);
-    if (vis.length&&vsel.size===vis.length) vsel=new Set(); else vsel=new Set(vis);
-    render();
-  };
-  if (q("#vdelsel")) q("#vdelsel").onclick=()=>{
-    if (!vsel.size) return;
-    if (!confirm("선택한 "+vsel.size+"개 단어를 삭제할까?")) return;
-    state.vocab[vcat]=words.filter((_,i)=>!vsel.has(i));
-    vsel=new Set(); vedit=null; save(); render();
-  };
-  main.querySelectorAll(".vdel").forEach(b=>{
-    b.onclick=()=>{ state.vocab[vcat].splice(+b.dataset.i,1); vsel=new Set(); vedit=null; save(); render(); };
+  h += `<div class="acts"><button class="btn" id="m-all">${lv === 0 ? '슬라이드 전체 듣기' : '전부 보기'}</button></div>`;
+  h += `<div class="hint">${lv === 0 ? '한두 번 따라 읽었으면' : '끝까지 말해본 뒤'} 평가하세요.</div>`;
+  h += `<div class="rate"><button class="btn" data-r="0">다시</button><button class="btn" data-r="1">거의</button><button class="btn pri" data-r="2">완벽 → ${lv < 2 ? '다음 단계' : '다음 슬라이드'}</button></div>`;
+  h += `<div class="nav2"><button class="btn" id="m-prev">← 이전 슬라이드</button><button class="btn" id="m-next">다음 슬라이드 →</button></div>`;
+  c.innerHTML = h;
+
+  c.querySelectorAll('.lvb').forEach(b => b.onclick = () => { lv = +b.dataset.l; renderMem(); });
+  c.querySelectorAll('.mt').forEach(el => el.onclick = e => {
+    const i = +el.dataset.i, p = s.paras[i];
+    if (lv === 1) { const w = e.target.closest('.w'); if (w) { w.classList.toggle('show'); return; } }
+    if (lv === 0) return;
+    if (el.classList.toggle('open')) el.innerHTML = p.show;
+    else el.innerHTML = lv === 1 ? initials(p.show) : lv === 2 ? firstWords(p.show, 3) : `<span class="blank">문단 ${i + 1} · ${plain(p.show).split(/\s+/).length}단어</span>`;
   });
-  main.querySelectorAll(".vedit2").forEach(b=>{
-    b.onclick=()=>{ vedit=+b.dataset.i; render(); };
+  c.querySelectorAll('.pb').forEach(b => b.onclick = () => playPara(s, +b.dataset.i, false));
+  document.getElementById('m-all').onclick = () => {
+    if (lv === 0) playPara(s, 0, true);
+    else c.querySelectorAll('.mt').forEach((el, i) => { el.classList.add('open'); el.innerHTML = s.paras[i].show; });
+  };
+  c.querySelectorAll('[data-r]').forEach(b => b.onclick = () => {
+    const r = +b.dataset.r;
+    if (r === 2) {
+      if (lv + 1 > store.get(s.id)) store.set(s.id, lv + 1);
+      if (lv < 2) lv++;
+      else { mi = nextWeak(mi); lv = Math.min(store.get(MEM[mi].id), 2); }
+    } else if (r === 0 && lv > 0) lv--;
+    renderStrip(); renderMem();
+    document.getElementById('mcard').scrollIntoView({ block: 'start', behavior: 'smooth' });
   });
-  if (q("#vesave")){
-    const commitEdit=()=>{
-      const it=state.vocab[vcat][vedit];
-      if (!it){ vedit=null; render(); return; }
-      const w=q("#vew").value.trim();
-      if (!w){ alert("단어는 비울 수 없음."); return; }
-      it.d=Math.max(1,parseInt(q("#ved").value)||1);
-      it.w=w; it.m=q("#vem").value.trim();
-      it.ex=q("#veex").value.trim(); it.ext=q("#veext").value.trim();
-      vedit=null; save(); render();
-    };
-    q("#vesave").onclick=commitEdit;
-    q("#vecancel").onclick=()=>{ vedit=null; render(); };
-    ["ved","vew","vem","veex","veext"].forEach(id=>{
-      const el=q("#"+id);
-      if (el) el.onkeydown=e=>{ if (e.key==="Enter") commitEdit(); else if (e.key==="Escape"){ vedit=null; render(); } };
-    });
-  }
+  document.getElementById('m-prev').onclick = () => { if (mi > 0) { mi--; lv = Math.min(store.get(MEM[mi].id), 2); renderStrip(); renderMem(); } };
+  document.getElementById('m-next').onclick = () => { if (mi < MEM.length - 1) { mi++; lv = Math.min(store.get(MEM[mi].id), 2); renderStrip(); renderMem(); } };
+  renderStrip();
+}
+function nextWeak(from) {
+  for (let k = 1; k <= MEM.length; k++) { const j = (from + k) % MEM.length; if (store.get(MEM[j].id) < 3) return j; }
+  return (from + 1) % MEM.length;
 }
 
-render();
-syncFromRepo();
+// paragraph playback on a second audio element
+const au2 = document.getElementById('au2');
+let stopAt = null, playingBtn = null;
+function stopPara() { au2.pause(); stopAt = null; playingBtn && playingBtn.classList.remove('on'); playingBtn = null; }
+function playPara(s, i, toEnd) {
+  const btn = document.querySelector(`.pb[data-i="${i}"]`);
+  if (playingBtn === btn && !au2.paused) { stopPara(); return; }
+  stopPara(); wantPlay = false; setBtn(); au.pause();
+  const t = tmap[s.id];
+  stopAt = toEnd ? t.dur : (t.marks[i + 1] !== undefined ? t.marks[i + 1] - 0.3 : t.dur);
+  playingBtn = btn; btn && btn.classList.add('on');
+  const go = () => { au2.currentTime = t.marks[i]; au2.play().catch(() => {}); };
+  if (au2.dataset.id !== s.id) { au2.dataset.id = s.id; au2.src = srcOf(s.id); au2.addEventListener('loadedmetadata', go, { once: true }); }
+  else go();
+}
+au2.addEventListener('timeupdate', () => { if (stopAt !== null && au2.currentTime >= stopAt) stopPara(); });
+au2.addEventListener('ended', stopPara);
+
+/* ================= first-sentence drill ================= */
+const firstSent = h => { const m = h.match(/^.*?[.!?](?=\s|$)/); return m ? m[0] : h; };
+const lastSent = h => { const parts = h.split(/(?<=[.!?])\s+/); return parts[parts.length - 1]; };
+let fi = 0, shown = false, known = 0, seen = 0, order = MEM.map((_, k) => k);
+function renderFirst() {
+  const k = order[fi % order.length], s = MEM[k], prev = MEM[k - 1];
+  const c = document.getElementById('fcard');
+  let h = `<div class="ch"><span class="sn">${s.num === 'Q&A' ? 'Q&amp;A' : 'SLIDE ' + s.num}</span><span class="st">${s.title}</span><span class="sd score">${known}/${seen} 맞힘</span></div>`;
+  if (prev) h += `<div class="ctx"><b>앞 슬라이드 (${prev.num}) 마지막 문장</b>${lastSent(prev.paras[prev.paras.length - 1].show)}</div>`;
+  else h += `<div class="ctx"><b>발표 시작</b>첫 인사부터 말해보세요.</div>`;
+  if (shown) {
+    h += `<div class="ans">${firstSent(s.paras[0].show)}</div>`;
+    h += `<div class="rate" style="grid-template-columns:1fr 1fr"><button class="btn" data-f="0">막혔음</button><button class="btn pri" data-f="1">바로 나왔음</button></div>`;
+  } else {
+    h += `<div class="acts"><button class="btn pri" id="f-show">정답 보기</button><button class="btn" id="f-play">▶ 듣기</button></div>`;
+  }
+  h += `<div class="nav2"><button class="btn" id="f-shuf">${order.some((v, j) => v !== j) ? '순서대로' : '섞기'}</button><button class="btn" id="f-skip">건너뛰기 →</button></div>`;
+  c.innerHTML = h;
+  const nextQ = () => { fi = (fi + 1) % order.length; shown = false; renderFirst(); };
+  const sh = document.getElementById('f-show'); sh && (sh.onclick = () => { shown = true; renderFirst(); });
+  const pl = document.getElementById('f-play'); pl && (pl.onclick = () => { shown = true; renderFirst(); playPara(s, 0, false); });
+  c.querySelectorAll('[data-f]').forEach(b => b.onclick = () => { seen++; known += +b.dataset.f; stopPara(); nextQ(); });
+  document.getElementById('f-skip').onclick = () => { stopPara(); nextQ(); };
+  document.getElementById('f-shuf').onclick = () => {
+    if (order.some((v, j) => v !== j)) order = MEM.map((_, j) => j);
+    else { order = MEM.map((_, j) => j); for (let j = order.length - 1; j > 0; j--) { const r = Math.floor(Math.random() * (j + 1)); [order[j], order[r]] = [order[r], order[j]]; } }
+    fi = 0; shown = false; known = 0; seen = 0; renderFirst();
+  };
+}
+
+/* ================= tabs ================= */
+function view(v) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.v === v));
+  document.getElementById('script').hidden = v !== 'listen';
+  document.getElementById('strip').hidden = v !== 'listen';
+  document.getElementById('lbar').hidden = v !== 'listen';
+  document.getElementById('mem').hidden = v !== 'mem';
+  document.getElementById('mstrip').hidden = v !== 'mem';
+  document.getElementById('first').hidden = v !== 'first';
+  if (v !== 'listen') { wantPlay = false; setBtn(); au.pause(); }
+  else stopPara();
+  if (v === 'mem') renderMem();
+  if (v === 'first') renderFirst();
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => view(t.dataset.v));
+if (location.hash === '#mem' || location.hash === '#first') view(location.hash.slice(1));
+
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
 </script>
-</body>
-</html>
+
+</body></html>
